@@ -8,9 +8,7 @@ class FlexiRecipesNotifier extends StateNotifier<FlexiRecipesState> {
   final RecipeRepository _recipeRepository;
 
   FlexiRecipesNotifier(this._recipeRepository)
-      : super(const FlexiRecipesState.initial()) {
-    loadRecipes();
-  }
+      : super(const FlexiRecipesState.initial());
 
   Future<void> loadRecipes() async {
     state = const FlexiRecipesState.loading();

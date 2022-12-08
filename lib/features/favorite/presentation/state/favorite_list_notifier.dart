@@ -10,9 +10,7 @@ class FavoriteListNotifier extends StateNotifier<FavoriteListState> {
 
   FavoriteListNotifier(
     this._favoriteRepository,
-  ) : super(const FavoriteListState.initial()) {
-    getFavorites();
-  }
+  ) : super(const FavoriteListState.initial());
 
   Future<void> getFavorites() async {
     state = const FavoriteListState.loading();

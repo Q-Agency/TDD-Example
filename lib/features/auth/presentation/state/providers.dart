@@ -51,5 +51,5 @@ final authNotifierProvider = StateNotifierProvider<AuthNotifier, AuthState>(
     ref.watch(userProvider),
     ref.watch(authRepositoryProvider),
     ref.watch(userRepositoryProvider),
-  ),
+  )..checkIfAuthenticated(),
 );

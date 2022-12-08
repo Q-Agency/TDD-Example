@@ -8,14 +8,11 @@ class VeganRecipesNotifier extends StateNotifier<VeganRecipesState> {
   final RecipeRepository _recipeRepository;
 
   VeganRecipesNotifier(this._recipeRepository)
-      : super(const VeganRecipesState.initial()) {
-    loadVeganRecipes();
-  }
+      : super(const VeganRecipesState.initial());
 
   Future<void> loadVeganRecipes() async {
     state = const VeganRecipesState.loading();
     final result = await _recipeRepository.getRecipes(tags: ['vegan']);
-
     state = result.fold(
         (failure) => VeganRecipesState.error(error: failure.failureMessage()),
         (data) => VeganRecipesState.loaded(recipes: data.recipes ?? []));

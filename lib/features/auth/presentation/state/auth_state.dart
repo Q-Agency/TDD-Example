@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'auth_state.freezed.dart';
 
 @freezed
-abstract class AuthState with _$AuthState {
+class AuthState with _$AuthState {
   const factory AuthState.initial() = _Initial;
   const factory AuthState.authenticating() = _Authenticating;
   const factory AuthState.unauthenticated() = _Unauthenticated;

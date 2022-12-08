@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'failure.dart';
@@ -11,45 +12,7 @@ part of 'failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FailureTearOff {
-  const _$FailureTearOff();
-
-  _Offline offline() {
-    return const _Offline();
-  }
-
-  _AuthenticationFailure authenticationFailure(AuthFailureReason reason) {
-    return _AuthenticationFailure(
-      reason,
-    );
-  }
-
-  _ServerError serverError() {
-    return const _ServerError();
-  }
-
-  _SignOutError signOutError() {
-    return const _SignOutError();
-  }
-
-  _UnauthorizedAccess unauthorizedAccess() {
-    return const _UnauthorizedAccess();
-  }
-
-  _UnexpectedDataError unexpectedDataError() {
-    return const _UnexpectedDataError();
-  }
-
-  _AuthenticationLocalDataSourceFailure authenticationLocalDataSourceFailure() {
-    return const _AuthenticationLocalDataSourceFailure();
-  }
-}
-
-/// @nodoc
-const $Failure = _$FailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Failure {
@@ -66,13 +29,13 @@ mixin _$Failure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? offline,
-    TResult Function(AuthFailureReason reason)? authenticationFailure,
-    TResult Function()? serverError,
-    TResult Function()? signOutError,
-    TResult Function()? unauthorizedAccess,
-    TResult Function()? unexpectedDataError,
-    TResult Function()? authenticationLocalDataSourceFailure,
+    TResult? Function()? offline,
+    TResult? Function(AuthFailureReason reason)? authenticationFailure,
+    TResult? Function()? serverError,
+    TResult? Function()? signOutError,
+    TResult? Function()? unauthorizedAccess,
+    TResult? Function()? unexpectedDataError,
+    TResult? Function()? authenticationLocalDataSourceFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,13 +65,13 @@ mixin _$Failure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Offline value)? offline,
-    TResult Function(_AuthenticationFailure value)? authenticationFailure,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_SignOutError value)? signOutError,
-    TResult Function(_UnauthorizedAccess value)? unauthorizedAccess,
-    TResult Function(_UnexpectedDataError value)? unexpectedDataError,
-    TResult Function(_AuthenticationLocalDataSourceFailure value)?
+    TResult? Function(_Offline value)? offline,
+    TResult? Function(_AuthenticationFailure value)? authenticationFailure,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_SignOutError value)? signOutError,
+    TResult? Function(_UnauthorizedAccess value)? unauthorizedAccess,
+    TResult? Function(_UnexpectedDataError value)? unexpectedDataError,
+    TResult? Function(_AuthenticationLocalDataSourceFailure value)?
         authenticationLocalDataSourceFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -130,32 +93,33 @@ mixin _$Failure {
 /// @nodoc
 abstract class $FailureCopyWith<$Res> {
   factory $FailureCopyWith(Failure value, $Res Function(Failure) then) =
-      _$FailureCopyWithImpl<$Res>;
+      _$FailureCopyWithImpl<$Res, Failure>;
 }
 
 /// @nodoc
-class _$FailureCopyWithImpl<$Res> implements $FailureCopyWith<$Res> {
+class _$FailureCopyWithImpl<$Res, $Val extends Failure>
+    implements $FailureCopyWith<$Res> {
   _$FailureCopyWithImpl(this._value, this._then);
 
-  final Failure _value;
   // ignore: unused_field
-  final $Res Function(Failure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$OfflineCopyWith<$Res> {
-  factory _$OfflineCopyWith(_Offline value, $Res Function(_Offline) then) =
-      __$OfflineCopyWithImpl<$Res>;
+abstract class _$$_OfflineCopyWith<$Res> {
+  factory _$$_OfflineCopyWith(
+          _$_Offline value, $Res Function(_$_Offline) then) =
+      __$$_OfflineCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$OfflineCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
-    implements _$OfflineCopyWith<$Res> {
-  __$OfflineCopyWithImpl(_Offline _value, $Res Function(_Offline) _then)
-      : super(_value, (v) => _then(v as _Offline));
-
-  @override
-  _Offline get _value => super._value as _Offline;
+class __$$_OfflineCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$_Offline>
+    implements _$$_OfflineCopyWith<$Res> {
+  __$$_OfflineCopyWithImpl(_$_Offline _value, $Res Function(_$_Offline) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -171,7 +135,7 @@ class _$_Offline implements _Offline {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Offline);
+        (other.runtimeType == runtimeType && other is _$_Offline);
   }
 
   @override
@@ -194,13 +158,13 @@ class _$_Offline implements _Offline {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? offline,
-    TResult Function(AuthFailureReason reason)? authenticationFailure,
-    TResult Function()? serverError,
-    TResult Function()? signOutError,
-    TResult Function()? unauthorizedAccess,
-    TResult Function()? unexpectedDataError,
-    TResult Function()? authenticationLocalDataSourceFailure,
+    TResult? Function()? offline,
+    TResult? Function(AuthFailureReason reason)? authenticationFailure,
+    TResult? Function()? serverError,
+    TResult? Function()? signOutError,
+    TResult? Function()? unauthorizedAccess,
+    TResult? Function()? unexpectedDataError,
+    TResult? Function()? authenticationLocalDataSourceFailure,
   }) {
     return offline?.call();
   }
@@ -242,13 +206,13 @@ class _$_Offline implements _Offline {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Offline value)? offline,
-    TResult Function(_AuthenticationFailure value)? authenticationFailure,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_SignOutError value)? signOutError,
-    TResult Function(_UnauthorizedAccess value)? unauthorizedAccess,
-    TResult Function(_UnexpectedDataError value)? unexpectedDataError,
-    TResult Function(_AuthenticationLocalDataSourceFailure value)?
+    TResult? Function(_Offline value)? offline,
+    TResult? Function(_AuthenticationFailure value)? authenticationFailure,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_SignOutError value)? signOutError,
+    TResult? Function(_UnauthorizedAccess value)? unauthorizedAccess,
+    TResult? Function(_UnexpectedDataError value)? unexpectedDataError,
+    TResult? Function(_AuthenticationLocalDataSourceFailure value)?
         authenticationLocalDataSourceFailure,
   }) {
     return offline?.call(this);
@@ -279,30 +243,29 @@ abstract class _Offline implements Failure {
 }
 
 /// @nodoc
-abstract class _$AuthenticationFailureCopyWith<$Res> {
-  factory _$AuthenticationFailureCopyWith(_AuthenticationFailure value,
-          $Res Function(_AuthenticationFailure) then) =
-      __$AuthenticationFailureCopyWithImpl<$Res>;
+abstract class _$$_AuthenticationFailureCopyWith<$Res> {
+  factory _$$_AuthenticationFailureCopyWith(_$_AuthenticationFailure value,
+          $Res Function(_$_AuthenticationFailure) then) =
+      __$$_AuthenticationFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({AuthFailureReason reason});
 }
 
 /// @nodoc
-class __$AuthenticationFailureCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res>
-    implements _$AuthenticationFailureCopyWith<$Res> {
-  __$AuthenticationFailureCopyWithImpl(_AuthenticationFailure _value,
-      $Res Function(_AuthenticationFailure) _then)
-      : super(_value, (v) => _then(v as _AuthenticationFailure));
+class __$$_AuthenticationFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$_AuthenticationFailure>
+    implements _$$_AuthenticationFailureCopyWith<$Res> {
+  __$$_AuthenticationFailureCopyWithImpl(_$_AuthenticationFailure _value,
+      $Res Function(_$_AuthenticationFailure) _then)
+      : super(_value, _then);
 
-  @override
-  _AuthenticationFailure get _value => super._value as _AuthenticationFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? reason = freezed,
+    Object? reason = null,
   }) {
-    return _then(_AuthenticationFailure(
-      reason == freezed
+    return _then(_$_AuthenticationFailure(
+      null == reason
           ? _value.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as AuthFailureReason,
@@ -327,18 +290,18 @@ class _$_AuthenticationFailure implements _AuthenticationFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AuthenticationFailure &&
-            const DeepCollectionEquality().equals(other.reason, reason));
+            other is _$_AuthenticationFailure &&
+            (identical(other.reason, reason) || other.reason == reason));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(reason));
+  int get hashCode => Object.hash(runtimeType, reason);
 
   @JsonKey(ignore: true)
   @override
-  _$AuthenticationFailureCopyWith<_AuthenticationFailure> get copyWith =>
-      __$AuthenticationFailureCopyWithImpl<_AuthenticationFailure>(
+  @pragma('vm:prefer-inline')
+  _$$_AuthenticationFailureCopyWith<_$_AuthenticationFailure> get copyWith =>
+      __$$_AuthenticationFailureCopyWithImpl<_$_AuthenticationFailure>(
           this, _$identity);
 
   @override
@@ -358,13 +321,13 @@ class _$_AuthenticationFailure implements _AuthenticationFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? offline,
-    TResult Function(AuthFailureReason reason)? authenticationFailure,
-    TResult Function()? serverError,
-    TResult Function()? signOutError,
-    TResult Function()? unauthorizedAccess,
-    TResult Function()? unexpectedDataError,
-    TResult Function()? authenticationLocalDataSourceFailure,
+    TResult? Function()? offline,
+    TResult? Function(AuthFailureReason reason)? authenticationFailure,
+    TResult? Function()? serverError,
+    TResult? Function()? signOutError,
+    TResult? Function()? unauthorizedAccess,
+    TResult? Function()? unexpectedDataError,
+    TResult? Function()? authenticationLocalDataSourceFailure,
   }) {
     return authenticationFailure?.call(reason);
   }
@@ -406,13 +369,13 @@ class _$_AuthenticationFailure implements _AuthenticationFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Offline value)? offline,
-    TResult Function(_AuthenticationFailure value)? authenticationFailure,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_SignOutError value)? signOutError,
-    TResult Function(_UnauthorizedAccess value)? unauthorizedAccess,
-    TResult Function(_UnexpectedDataError value)? unexpectedDataError,
-    TResult Function(_AuthenticationLocalDataSourceFailure value)?
+    TResult? Function(_Offline value)? offline,
+    TResult? Function(_AuthenticationFailure value)? authenticationFailure,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_SignOutError value)? signOutError,
+    TResult? Function(_UnauthorizedAccess value)? unauthorizedAccess,
+    TResult? Function(_UnexpectedDataError value)? unexpectedDataError,
+    TResult? Function(_AuthenticationLocalDataSourceFailure value)?
         authenticationLocalDataSourceFailure,
   }) {
     return authenticationFailure?.call(this);
@@ -439,31 +402,29 @@ class _$_AuthenticationFailure implements _AuthenticationFailure {
 }
 
 abstract class _AuthenticationFailure implements Failure {
-  const factory _AuthenticationFailure(AuthFailureReason reason) =
+  const factory _AuthenticationFailure(final AuthFailureReason reason) =
       _$_AuthenticationFailure;
 
   AuthFailureReason get reason;
   @JsonKey(ignore: true)
-  _$AuthenticationFailureCopyWith<_AuthenticationFailure> get copyWith =>
+  _$$_AuthenticationFailureCopyWith<_$_AuthenticationFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ServerErrorCopyWith<$Res> {
-  factory _$ServerErrorCopyWith(
-          _ServerError value, $Res Function(_ServerError) then) =
-      __$ServerErrorCopyWithImpl<$Res>;
+abstract class _$$_ServerErrorCopyWith<$Res> {
+  factory _$$_ServerErrorCopyWith(
+          _$_ServerError value, $Res Function(_$_ServerError) then) =
+      __$$_ServerErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ServerErrorCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
-    implements _$ServerErrorCopyWith<$Res> {
-  __$ServerErrorCopyWithImpl(
-      _ServerError _value, $Res Function(_ServerError) _then)
-      : super(_value, (v) => _then(v as _ServerError));
-
-  @override
-  _ServerError get _value => super._value as _ServerError;
+class __$$_ServerErrorCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$_ServerError>
+    implements _$$_ServerErrorCopyWith<$Res> {
+  __$$_ServerErrorCopyWithImpl(
+      _$_ServerError _value, $Res Function(_$_ServerError) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -479,7 +440,7 @@ class _$_ServerError implements _ServerError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ServerError);
+        (other.runtimeType == runtimeType && other is _$_ServerError);
   }
 
   @override
@@ -502,13 +463,13 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? offline,
-    TResult Function(AuthFailureReason reason)? authenticationFailure,
-    TResult Function()? serverError,
-    TResult Function()? signOutError,
-    TResult Function()? unauthorizedAccess,
-    TResult Function()? unexpectedDataError,
-    TResult Function()? authenticationLocalDataSourceFailure,
+    TResult? Function()? offline,
+    TResult? Function(AuthFailureReason reason)? authenticationFailure,
+    TResult? Function()? serverError,
+    TResult? Function()? signOutError,
+    TResult? Function()? unauthorizedAccess,
+    TResult? Function()? unexpectedDataError,
+    TResult? Function()? authenticationLocalDataSourceFailure,
   }) {
     return serverError?.call();
   }
@@ -550,13 +511,13 @@ class _$_ServerError implements _ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Offline value)? offline,
-    TResult Function(_AuthenticationFailure value)? authenticationFailure,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_SignOutError value)? signOutError,
-    TResult Function(_UnauthorizedAccess value)? unauthorizedAccess,
-    TResult Function(_UnexpectedDataError value)? unexpectedDataError,
-    TResult Function(_AuthenticationLocalDataSourceFailure value)?
+    TResult? Function(_Offline value)? offline,
+    TResult? Function(_AuthenticationFailure value)? authenticationFailure,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_SignOutError value)? signOutError,
+    TResult? Function(_UnauthorizedAccess value)? unauthorizedAccess,
+    TResult? Function(_UnexpectedDataError value)? unexpectedDataError,
+    TResult? Function(_AuthenticationLocalDataSourceFailure value)?
         authenticationLocalDataSourceFailure,
   }) {
     return serverError?.call(this);
@@ -587,21 +548,19 @@ abstract class _ServerError implements Failure {
 }
 
 /// @nodoc
-abstract class _$SignOutErrorCopyWith<$Res> {
-  factory _$SignOutErrorCopyWith(
-          _SignOutError value, $Res Function(_SignOutError) then) =
-      __$SignOutErrorCopyWithImpl<$Res>;
+abstract class _$$_SignOutErrorCopyWith<$Res> {
+  factory _$$_SignOutErrorCopyWith(
+          _$_SignOutError value, $Res Function(_$_SignOutError) then) =
+      __$$_SignOutErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignOutErrorCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
-    implements _$SignOutErrorCopyWith<$Res> {
-  __$SignOutErrorCopyWithImpl(
-      _SignOutError _value, $Res Function(_SignOutError) _then)
-      : super(_value, (v) => _then(v as _SignOutError));
-
-  @override
-  _SignOutError get _value => super._value as _SignOutError;
+class __$$_SignOutErrorCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$_SignOutError>
+    implements _$$_SignOutErrorCopyWith<$Res> {
+  __$$_SignOutErrorCopyWithImpl(
+      _$_SignOutError _value, $Res Function(_$_SignOutError) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -617,7 +576,7 @@ class _$_SignOutError implements _SignOutError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignOutError);
+        (other.runtimeType == runtimeType && other is _$_SignOutError);
   }
 
   @override
@@ -640,13 +599,13 @@ class _$_SignOutError implements _SignOutError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? offline,
-    TResult Function(AuthFailureReason reason)? authenticationFailure,
-    TResult Function()? serverError,
-    TResult Function()? signOutError,
-    TResult Function()? unauthorizedAccess,
-    TResult Function()? unexpectedDataError,
-    TResult Function()? authenticationLocalDataSourceFailure,
+    TResult? Function()? offline,
+    TResult? Function(AuthFailureReason reason)? authenticationFailure,
+    TResult? Function()? serverError,
+    TResult? Function()? signOutError,
+    TResult? Function()? unauthorizedAccess,
+    TResult? Function()? unexpectedDataError,
+    TResult? Function()? authenticationLocalDataSourceFailure,
   }) {
     return signOutError?.call();
   }
@@ -688,13 +647,13 @@ class _$_SignOutError implements _SignOutError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Offline value)? offline,
-    TResult Function(_AuthenticationFailure value)? authenticationFailure,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_SignOutError value)? signOutError,
-    TResult Function(_UnauthorizedAccess value)? unauthorizedAccess,
-    TResult Function(_UnexpectedDataError value)? unexpectedDataError,
-    TResult Function(_AuthenticationLocalDataSourceFailure value)?
+    TResult? Function(_Offline value)? offline,
+    TResult? Function(_AuthenticationFailure value)? authenticationFailure,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_SignOutError value)? signOutError,
+    TResult? Function(_UnauthorizedAccess value)? unauthorizedAccess,
+    TResult? Function(_UnexpectedDataError value)? unexpectedDataError,
+    TResult? Function(_AuthenticationLocalDataSourceFailure value)?
         authenticationLocalDataSourceFailure,
   }) {
     return signOutError?.call(this);
@@ -725,22 +684,19 @@ abstract class _SignOutError implements Failure {
 }
 
 /// @nodoc
-abstract class _$UnauthorizedAccessCopyWith<$Res> {
-  factory _$UnauthorizedAccessCopyWith(
-          _UnauthorizedAccess value, $Res Function(_UnauthorizedAccess) then) =
-      __$UnauthorizedAccessCopyWithImpl<$Res>;
+abstract class _$$_UnauthorizedAccessCopyWith<$Res> {
+  factory _$$_UnauthorizedAccessCopyWith(_$_UnauthorizedAccess value,
+          $Res Function(_$_UnauthorizedAccess) then) =
+      __$$_UnauthorizedAccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnauthorizedAccessCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res>
-    implements _$UnauthorizedAccessCopyWith<$Res> {
-  __$UnauthorizedAccessCopyWithImpl(
-      _UnauthorizedAccess _value, $Res Function(_UnauthorizedAccess) _then)
-      : super(_value, (v) => _then(v as _UnauthorizedAccess));
-
-  @override
-  _UnauthorizedAccess get _value => super._value as _UnauthorizedAccess;
+class __$$_UnauthorizedAccessCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$_UnauthorizedAccess>
+    implements _$$_UnauthorizedAccessCopyWith<$Res> {
+  __$$_UnauthorizedAccessCopyWithImpl(
+      _$_UnauthorizedAccess _value, $Res Function(_$_UnauthorizedAccess) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -756,7 +712,7 @@ class _$_UnauthorizedAccess implements _UnauthorizedAccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _UnauthorizedAccess);
+        (other.runtimeType == runtimeType && other is _$_UnauthorizedAccess);
   }
 
   @override
@@ -779,13 +735,13 @@ class _$_UnauthorizedAccess implements _UnauthorizedAccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? offline,
-    TResult Function(AuthFailureReason reason)? authenticationFailure,
-    TResult Function()? serverError,
-    TResult Function()? signOutError,
-    TResult Function()? unauthorizedAccess,
-    TResult Function()? unexpectedDataError,
-    TResult Function()? authenticationLocalDataSourceFailure,
+    TResult? Function()? offline,
+    TResult? Function(AuthFailureReason reason)? authenticationFailure,
+    TResult? Function()? serverError,
+    TResult? Function()? signOutError,
+    TResult? Function()? unauthorizedAccess,
+    TResult? Function()? unexpectedDataError,
+    TResult? Function()? authenticationLocalDataSourceFailure,
   }) {
     return unauthorizedAccess?.call();
   }
@@ -827,13 +783,13 @@ class _$_UnauthorizedAccess implements _UnauthorizedAccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Offline value)? offline,
-    TResult Function(_AuthenticationFailure value)? authenticationFailure,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_SignOutError value)? signOutError,
-    TResult Function(_UnauthorizedAccess value)? unauthorizedAccess,
-    TResult Function(_UnexpectedDataError value)? unexpectedDataError,
-    TResult Function(_AuthenticationLocalDataSourceFailure value)?
+    TResult? Function(_Offline value)? offline,
+    TResult? Function(_AuthenticationFailure value)? authenticationFailure,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_SignOutError value)? signOutError,
+    TResult? Function(_UnauthorizedAccess value)? unauthorizedAccess,
+    TResult? Function(_UnexpectedDataError value)? unexpectedDataError,
+    TResult? Function(_AuthenticationLocalDataSourceFailure value)?
         authenticationLocalDataSourceFailure,
   }) {
     return unauthorizedAccess?.call(this);
@@ -864,22 +820,19 @@ abstract class _UnauthorizedAccess implements Failure {
 }
 
 /// @nodoc
-abstract class _$UnexpectedDataErrorCopyWith<$Res> {
-  factory _$UnexpectedDataErrorCopyWith(_UnexpectedDataError value,
-          $Res Function(_UnexpectedDataError) then) =
-      __$UnexpectedDataErrorCopyWithImpl<$Res>;
+abstract class _$$_UnexpectedDataErrorCopyWith<$Res> {
+  factory _$$_UnexpectedDataErrorCopyWith(_$_UnexpectedDataError value,
+          $Res Function(_$_UnexpectedDataError) then) =
+      __$$_UnexpectedDataErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnexpectedDataErrorCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res>
-    implements _$UnexpectedDataErrorCopyWith<$Res> {
-  __$UnexpectedDataErrorCopyWithImpl(
-      _UnexpectedDataError _value, $Res Function(_UnexpectedDataError) _then)
-      : super(_value, (v) => _then(v as _UnexpectedDataError));
-
-  @override
-  _UnexpectedDataError get _value => super._value as _UnexpectedDataError;
+class __$$_UnexpectedDataErrorCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$_UnexpectedDataError>
+    implements _$$_UnexpectedDataErrorCopyWith<$Res> {
+  __$$_UnexpectedDataErrorCopyWithImpl(_$_UnexpectedDataError _value,
+      $Res Function(_$_UnexpectedDataError) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -895,7 +848,7 @@ class _$_UnexpectedDataError implements _UnexpectedDataError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _UnexpectedDataError);
+        (other.runtimeType == runtimeType && other is _$_UnexpectedDataError);
   }
 
   @override
@@ -918,13 +871,13 @@ class _$_UnexpectedDataError implements _UnexpectedDataError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? offline,
-    TResult Function(AuthFailureReason reason)? authenticationFailure,
-    TResult Function()? serverError,
-    TResult Function()? signOutError,
-    TResult Function()? unauthorizedAccess,
-    TResult Function()? unexpectedDataError,
-    TResult Function()? authenticationLocalDataSourceFailure,
+    TResult? Function()? offline,
+    TResult? Function(AuthFailureReason reason)? authenticationFailure,
+    TResult? Function()? serverError,
+    TResult? Function()? signOutError,
+    TResult? Function()? unauthorizedAccess,
+    TResult? Function()? unexpectedDataError,
+    TResult? Function()? authenticationLocalDataSourceFailure,
   }) {
     return unexpectedDataError?.call();
   }
@@ -966,13 +919,13 @@ class _$_UnexpectedDataError implements _UnexpectedDataError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Offline value)? offline,
-    TResult Function(_AuthenticationFailure value)? authenticationFailure,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_SignOutError value)? signOutError,
-    TResult Function(_UnauthorizedAccess value)? unauthorizedAccess,
-    TResult Function(_UnexpectedDataError value)? unexpectedDataError,
-    TResult Function(_AuthenticationLocalDataSourceFailure value)?
+    TResult? Function(_Offline value)? offline,
+    TResult? Function(_AuthenticationFailure value)? authenticationFailure,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_SignOutError value)? signOutError,
+    TResult? Function(_UnauthorizedAccess value)? unauthorizedAccess,
+    TResult? Function(_UnexpectedDataError value)? unexpectedDataError,
+    TResult? Function(_AuthenticationLocalDataSourceFailure value)?
         authenticationLocalDataSourceFailure,
   }) {
     return unexpectedDataError?.call(this);
@@ -1003,25 +956,21 @@ abstract class _UnexpectedDataError implements Failure {
 }
 
 /// @nodoc
-abstract class _$AuthenticationLocalDataSourceFailureCopyWith<$Res> {
-  factory _$AuthenticationLocalDataSourceFailureCopyWith(
-          _AuthenticationLocalDataSourceFailure value,
-          $Res Function(_AuthenticationLocalDataSourceFailure) then) =
-      __$AuthenticationLocalDataSourceFailureCopyWithImpl<$Res>;
+abstract class _$$_AuthenticationLocalDataSourceFailureCopyWith<$Res> {
+  factory _$$_AuthenticationLocalDataSourceFailureCopyWith(
+          _$_AuthenticationLocalDataSourceFailure value,
+          $Res Function(_$_AuthenticationLocalDataSourceFailure) then) =
+      __$$_AuthenticationLocalDataSourceFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AuthenticationLocalDataSourceFailureCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res>
-    implements _$AuthenticationLocalDataSourceFailureCopyWith<$Res> {
-  __$AuthenticationLocalDataSourceFailureCopyWithImpl(
-      _AuthenticationLocalDataSourceFailure _value,
-      $Res Function(_AuthenticationLocalDataSourceFailure) _then)
-      : super(_value, (v) => _then(v as _AuthenticationLocalDataSourceFailure));
-
-  @override
-  _AuthenticationLocalDataSourceFailure get _value =>
-      super._value as _AuthenticationLocalDataSourceFailure;
+class __$$_AuthenticationLocalDataSourceFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$_AuthenticationLocalDataSourceFailure>
+    implements _$$_AuthenticationLocalDataSourceFailureCopyWith<$Res> {
+  __$$_AuthenticationLocalDataSourceFailureCopyWithImpl(
+      _$_AuthenticationLocalDataSourceFailure _value,
+      $Res Function(_$_AuthenticationLocalDataSourceFailure) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1039,7 +988,7 @@ class _$_AuthenticationLocalDataSourceFailure
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AuthenticationLocalDataSourceFailure);
+            other is _$_AuthenticationLocalDataSourceFailure);
   }
 
   @override
@@ -1062,13 +1011,13 @@ class _$_AuthenticationLocalDataSourceFailure
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? offline,
-    TResult Function(AuthFailureReason reason)? authenticationFailure,
-    TResult Function()? serverError,
-    TResult Function()? signOutError,
-    TResult Function()? unauthorizedAccess,
-    TResult Function()? unexpectedDataError,
-    TResult Function()? authenticationLocalDataSourceFailure,
+    TResult? Function()? offline,
+    TResult? Function(AuthFailureReason reason)? authenticationFailure,
+    TResult? Function()? serverError,
+    TResult? Function()? signOutError,
+    TResult? Function()? unauthorizedAccess,
+    TResult? Function()? unexpectedDataError,
+    TResult? Function()? authenticationLocalDataSourceFailure,
   }) {
     return authenticationLocalDataSourceFailure?.call();
   }
@@ -1110,13 +1059,13 @@ class _$_AuthenticationLocalDataSourceFailure
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Offline value)? offline,
-    TResult Function(_AuthenticationFailure value)? authenticationFailure,
-    TResult Function(_ServerError value)? serverError,
-    TResult Function(_SignOutError value)? signOutError,
-    TResult Function(_UnauthorizedAccess value)? unauthorizedAccess,
-    TResult Function(_UnexpectedDataError value)? unexpectedDataError,
-    TResult Function(_AuthenticationLocalDataSourceFailure value)?
+    TResult? Function(_Offline value)? offline,
+    TResult? Function(_AuthenticationFailure value)? authenticationFailure,
+    TResult? Function(_ServerError value)? serverError,
+    TResult? Function(_SignOutError value)? signOutError,
+    TResult? Function(_UnauthorizedAccess value)? unauthorizedAccess,
+    TResult? Function(_UnexpectedDataError value)? unexpectedDataError,
+    TResult? Function(_AuthenticationLocalDataSourceFailure value)?
         authenticationLocalDataSourceFailure,
   }) {
     return authenticationLocalDataSourceFailure?.call(this);

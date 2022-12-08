@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_tdd_q/common/data/repositories/recipe_repository.dart';
@@ -37,13 +36,15 @@ final recipesRepositoryProvider = Provider<RecipeRepository>(
 final flexiRecipesNotifierProvider =
     StateNotifierProvider.autoDispose<FlexiRecipesNotifier, FlexiRecipesState>(
         (ref) {
-  return FlexiRecipesNotifier(ref.watch(recipesRepositoryProvider));
+  return FlexiRecipesNotifier(ref.watch(recipesRepositoryProvider))
+    ..loadRecipes();
 });
 
 final veganRecipesNotifierProvider =
     StateNotifierProvider.autoDispose<VeganRecipesNotifier, VeganRecipesState>(
         (ref) {
-  return VeganRecipesNotifier(ref.watch(recipesRepositoryProvider));
+  return VeganRecipesNotifier(ref.watch(recipesRepositoryProvider))
+    ..loadVeganRecipes();
 });
 
 //Firebase
@@ -75,7 +76,7 @@ final favoriteListNotifierProvider =
     StateNotifierProvider.autoDispose<FavoriteListNotifier, FavoriteListState>(
   (ref) => FavoriteListNotifier(
     ref.watch(favoriteRepositoryProvider),
-  ),
+  )..getFavorites(),
 );
 
 final filteredFavoritesListProvider = Provider.autoDispose<List<Recipe>>((ref) {

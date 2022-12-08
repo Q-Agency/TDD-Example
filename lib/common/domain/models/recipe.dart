@@ -4,7 +4,7 @@ part 'recipe.freezed.dart';
 part 'recipe.g.dart';
 
 @freezed
-abstract class Recipes with _$Recipes {
+class Recipes with _$Recipes {
   const factory Recipes.data({
     List<Recipe>? recipes,
   }) = _Recipes;
@@ -14,7 +14,7 @@ abstract class Recipes with _$Recipes {
 }
 
 @freezed
-abstract class Recipe with _$Recipe {
+class Recipe with _$Recipe {
   const factory Recipe({
     bool? vegetarian,
     bool? vegan,

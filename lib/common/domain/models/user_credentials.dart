@@ -4,7 +4,7 @@ part 'user_credentials.freezed.dart';
 part 'user_credentials.g.dart';
 
 @freezed
-abstract class UserCredentials with _$UserCredentials {
+class UserCredentials with _$UserCredentials {
   const factory UserCredentials({
     required String email,
     required String uid,

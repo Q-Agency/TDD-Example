@@ -10,6 +10,7 @@
 //
 // ignore_for_file: type=lint
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i8;
 import 'package:flutter/material.dart' as _i9;
 
@@ -32,56 +33,98 @@ class AppRouter extends _i8.RootStackRouter {
   final Map<String, _i8.PageFactory> pagesMap = {
     SplashRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.SplashPage());
+        routeData: routeData,
+        child: const _i1.SplashPage(),
+      );
     },
     SignInRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i2.SignInPage());
+        routeData: routeData,
+        child: const _i2.SignInPage(),
+      );
     },
     MainRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i3.MainPage());
+        routeData: routeData,
+        child: const _i3.MainPage(),
+      );
     },
     RecipeDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<RecipeDetailsRouteArgs>();
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData,
-          child: _i4.RecipeDetailsPage(key: args.key, recipe: args.recipe));
+        routeData: routeData,
+        child: _i4.RecipeDetailsPage(
+          key: args.key,
+          recipe: args.recipe,
+        ),
+      );
     },
     FlexiterianRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i5.FlexiterianPage());
+        routeData: routeData,
+        child: const _i5.FlexiterianPage(),
+      );
     },
     FavoriteRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i6.FavoritePage());
+        routeData: routeData,
+        child: const _i6.FavoritePage(),
+      );
     },
     VeganRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i7.VeganPage());
-    }
+        routeData: routeData,
+        child: const _i7.VeganPage(),
+      );
+    },
   };
 
   @override
   List<_i8.RouteConfig> get routes => [
-        _i8.RouteConfig(SplashRoute.name, path: '/'),
-        _i8.RouteConfig(SignInRoute.name, path: '/sign-in-page'),
-        _i8.RouteConfig(MainRoute.name, path: '/main-page', children: [
-          _i8.RouteConfig(FlexiterianRoute.name,
-              path: 'flexiterian-page', parent: MainRoute.name),
-          _i8.RouteConfig(FavoriteRoute.name,
-              path: 'favorite-page', parent: MainRoute.name),
-          _i8.RouteConfig(VeganRoute.name,
-              path: 'vegan-page', parent: MainRoute.name)
-        ]),
-        _i8.RouteConfig(RecipeDetailsRoute.name, path: '/recipe-details-page')
+        _i8.RouteConfig(
+          SplashRoute.name,
+          path: '/',
+        ),
+        _i8.RouteConfig(
+          SignInRoute.name,
+          path: '/sign-in-page',
+        ),
+        _i8.RouteConfig(
+          MainRoute.name,
+          path: '/main-page',
+          children: [
+            _i8.RouteConfig(
+              FlexiterianRoute.name,
+              path: 'flexiterian-page',
+              parent: MainRoute.name,
+            ),
+            _i8.RouteConfig(
+              FavoriteRoute.name,
+              path: 'favorite-page',
+              parent: MainRoute.name,
+            ),
+            _i8.RouteConfig(
+              VeganRoute.name,
+              path: 'vegan-page',
+              parent: MainRoute.name,
+            ),
+          ],
+        ),
+        _i8.RouteConfig(
+          RecipeDetailsRoute.name,
+          path: '/recipe-details-page',
+        ),
       ];
 }
 
 /// generated route for
 /// [_i1.SplashPage]
 class SplashRoute extends _i8.PageRouteInfo<void> {
-  const SplashRoute() : super(SplashRoute.name, path: '/');
+  const SplashRoute()
+      : super(
+          SplashRoute.name,
+          path: '/',
+        );
 
   static const String name = 'SplashRoute';
 }
@@ -89,7 +132,11 @@ class SplashRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i2.SignInPage]
 class SignInRoute extends _i8.PageRouteInfo<void> {
-  const SignInRoute() : super(SignInRoute.name, path: '/sign-in-page');
+  const SignInRoute()
+      : super(
+          SignInRoute.name,
+          path: '/sign-in-page',
+        );
 
   static const String name = 'SignInRoute';
 }
@@ -98,7 +145,11 @@ class SignInRoute extends _i8.PageRouteInfo<void> {
 /// [_i3.MainPage]
 class MainRoute extends _i8.PageRouteInfo<void> {
   const MainRoute({List<_i8.PageRouteInfo>? children})
-      : super(MainRoute.name, path: '/main-page', initialChildren: children);
+      : super(
+          MainRoute.name,
+          path: '/main-page',
+          initialChildren: children,
+        );
 
   static const String name = 'MainRoute';
 }
@@ -106,16 +157,26 @@ class MainRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i4.RecipeDetailsPage]
 class RecipeDetailsRoute extends _i8.PageRouteInfo<RecipeDetailsRouteArgs> {
-  RecipeDetailsRoute({_i9.Key? key, required _i10.Recipe recipe})
-      : super(RecipeDetailsRoute.name,
-            path: '/recipe-details-page',
-            args: RecipeDetailsRouteArgs(key: key, recipe: recipe));
+  RecipeDetailsRoute({
+    _i9.Key? key,
+    required _i10.Recipe recipe,
+  }) : super(
+          RecipeDetailsRoute.name,
+          path: '/recipe-details-page',
+          args: RecipeDetailsRouteArgs(
+            key: key,
+            recipe: recipe,
+          ),
+        );
 
   static const String name = 'RecipeDetailsRoute';
 }
 
 class RecipeDetailsRouteArgs {
-  const RecipeDetailsRouteArgs({this.key, required this.recipe});
+  const RecipeDetailsRouteArgs({
+    this.key,
+    required this.recipe,
+  });
 
   final _i9.Key? key;
 
@@ -131,7 +192,10 @@ class RecipeDetailsRouteArgs {
 /// [_i5.FlexiterianPage]
 class FlexiterianRoute extends _i8.PageRouteInfo<void> {
   const FlexiterianRoute()
-      : super(FlexiterianRoute.name, path: 'flexiterian-page');
+      : super(
+          FlexiterianRoute.name,
+          path: 'flexiterian-page',
+        );
 
   static const String name = 'FlexiterianRoute';
 }
@@ -139,7 +203,11 @@ class FlexiterianRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i6.FavoritePage]
 class FavoriteRoute extends _i8.PageRouteInfo<void> {
-  const FavoriteRoute() : super(FavoriteRoute.name, path: 'favorite-page');
+  const FavoriteRoute()
+      : super(
+          FavoriteRoute.name,
+          path: 'favorite-page',
+        );
 
   static const String name = 'FavoriteRoute';
 }
@@ -147,7 +215,11 @@ class FavoriteRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i7.VeganPage]
 class VeganRoute extends _i8.PageRouteInfo<void> {
-  const VeganRoute() : super(VeganRoute.name, path: 'vegan-page');
+  const VeganRoute()
+      : super(
+          VeganRoute.name,
+          path: 'vegan-page',
+        );
 
   static const String name = 'VeganRoute';
 }

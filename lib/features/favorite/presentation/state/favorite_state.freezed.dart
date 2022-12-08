@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'favorite_state.dart';
@@ -11,36 +12,7 @@ part of 'favorite_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FavoriteStateTearOff {
-  const _$FavoriteStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _Submitting submitting() {
-    return const _Submitting();
-  }
-
-  _Data data({required bool favorite, required Recipe recipe}) {
-    return _Data(
-      favorite: favorite,
-      recipe: recipe,
-    );
-  }
-
-  _Error error({required Failure error}) {
-    return _Error(
-      error: error,
-    );
-  }
-}
-
-/// @nodoc
-const $FavoriteState = _$FavoriteStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$FavoriteState {
@@ -54,10 +26,10 @@ mixin _$FavoriteState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? submitting,
-    TResult Function(bool favorite, Recipe recipe)? data,
-    TResult Function(Failure error)? error,
+    TResult? Function()? initial,
+    TResult? Function()? submitting,
+    TResult? Function(bool favorite, Recipe recipe)? data,
+    TResult? Function(Failure error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,10 +51,10 @@ mixin _$FavoriteState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Submitting value)? submitting,
-    TResult Function(_Data value)? data,
-    TResult Function(_Error value)? error,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Submitting value)? submitting,
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -100,33 +72,33 @@ mixin _$FavoriteState {
 abstract class $FavoriteStateCopyWith<$Res> {
   factory $FavoriteStateCopyWith(
           FavoriteState value, $Res Function(FavoriteState) then) =
-      _$FavoriteStateCopyWithImpl<$Res>;
+      _$FavoriteStateCopyWithImpl<$Res, FavoriteState>;
 }
 
 /// @nodoc
-class _$FavoriteStateCopyWithImpl<$Res>
+class _$FavoriteStateCopyWithImpl<$Res, $Val extends FavoriteState>
     implements $FavoriteStateCopyWith<$Res> {
   _$FavoriteStateCopyWithImpl(this._value, this._then);
 
-  final FavoriteState _value;
   // ignore: unused_field
-  final $Res Function(FavoriteState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$FavoriteStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -142,7 +114,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -162,10 +134,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? submitting,
-    TResult Function(bool favorite, Recipe recipe)? data,
-    TResult Function(Failure error)? error,
+    TResult? Function()? initial,
+    TResult? Function()? submitting,
+    TResult? Function(bool favorite, Recipe recipe)? data,
+    TResult? Function(Failure error)? error,
   }) {
     return initial?.call();
   }
@@ -199,10 +171,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Submitting value)? submitting,
-    TResult Function(_Data value)? data,
-    TResult Function(_Error value)? error,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Submitting value)? submitting,
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
   }
@@ -228,21 +200,19 @@ abstract class _Initial implements FavoriteState {
 }
 
 /// @nodoc
-abstract class _$SubmittingCopyWith<$Res> {
-  factory _$SubmittingCopyWith(
-          _Submitting value, $Res Function(_Submitting) then) =
-      __$SubmittingCopyWithImpl<$Res>;
+abstract class _$$_SubmittingCopyWith<$Res> {
+  factory _$$_SubmittingCopyWith(
+          _$_Submitting value, $Res Function(_$_Submitting) then) =
+      __$$_SubmittingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SubmittingCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
-    implements _$SubmittingCopyWith<$Res> {
-  __$SubmittingCopyWithImpl(
-      _Submitting _value, $Res Function(_Submitting) _then)
-      : super(_value, (v) => _then(v as _Submitting));
-
-  @override
-  _Submitting get _value => super._value as _Submitting;
+class __$$_SubmittingCopyWithImpl<$Res>
+    extends _$FavoriteStateCopyWithImpl<$Res, _$_Submitting>
+    implements _$$_SubmittingCopyWith<$Res> {
+  __$$_SubmittingCopyWithImpl(
+      _$_Submitting _value, $Res Function(_$_Submitting) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -258,7 +228,7 @@ class _$_Submitting implements _Submitting {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Submitting);
+        (other.runtimeType == runtimeType && other is _$_Submitting);
   }
 
   @override
@@ -278,10 +248,10 @@ class _$_Submitting implements _Submitting {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? submitting,
-    TResult Function(bool favorite, Recipe recipe)? data,
-    TResult Function(Failure error)? error,
+    TResult? Function()? initial,
+    TResult? Function()? submitting,
+    TResult? Function(bool favorite, Recipe recipe)? data,
+    TResult? Function(Failure error)? error,
   }) {
     return submitting?.call();
   }
@@ -315,10 +285,10 @@ class _$_Submitting implements _Submitting {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Submitting value)? submitting,
-    TResult Function(_Data value)? data,
-    TResult Function(_Error value)? error,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Submitting value)? submitting,
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Error value)? error,
   }) {
     return submitting?.call(this);
   }
@@ -344,34 +314,34 @@ abstract class _Submitting implements FavoriteState {
 }
 
 /// @nodoc
-abstract class _$DataCopyWith<$Res> {
-  factory _$DataCopyWith(_Data value, $Res Function(_Data) then) =
-      __$DataCopyWithImpl<$Res>;
+abstract class _$$_DataCopyWith<$Res> {
+  factory _$$_DataCopyWith(_$_Data value, $Res Function(_$_Data) then) =
+      __$$_DataCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool favorite, Recipe recipe});
 
   $RecipeCopyWith<$Res> get recipe;
 }
 
 /// @nodoc
-class __$DataCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
-    implements _$DataCopyWith<$Res> {
-  __$DataCopyWithImpl(_Data _value, $Res Function(_Data) _then)
-      : super(_value, (v) => _then(v as _Data));
+class __$$_DataCopyWithImpl<$Res>
+    extends _$FavoriteStateCopyWithImpl<$Res, _$_Data>
+    implements _$$_DataCopyWith<$Res> {
+  __$$_DataCopyWithImpl(_$_Data _value, $Res Function(_$_Data) _then)
+      : super(_value, _then);
 
-  @override
-  _Data get _value => super._value as _Data;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? favorite = freezed,
-    Object? recipe = freezed,
+    Object? favorite = null,
+    Object? recipe = null,
   }) {
-    return _then(_Data(
-      favorite: favorite == freezed
+    return _then(_$_Data(
+      favorite: null == favorite
           ? _value.favorite
           : favorite // ignore: cast_nullable_to_non_nullable
               as bool,
-      recipe: recipe == freezed
+      recipe: null == recipe
           ? _value.recipe
           : recipe // ignore: cast_nullable_to_non_nullable
               as Recipe,
@@ -379,6 +349,7 @@ class __$DataCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $RecipeCopyWith<$Res> get recipe {
     return $RecipeCopyWith<$Res>(_value.recipe, (value) {
       return _then(_value.copyWith(recipe: value));
@@ -405,21 +376,20 @@ class _$_Data implements _Data {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Data &&
-            const DeepCollectionEquality().equals(other.favorite, favorite) &&
-            const DeepCollectionEquality().equals(other.recipe, recipe));
+            other is _$_Data &&
+            (identical(other.favorite, favorite) ||
+                other.favorite == favorite) &&
+            (identical(other.recipe, recipe) || other.recipe == recipe));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(favorite),
-      const DeepCollectionEquality().hash(recipe));
+  int get hashCode => Object.hash(runtimeType, favorite, recipe);
 
   @JsonKey(ignore: true)
   @override
-  _$DataCopyWith<_Data> get copyWith =>
-      __$DataCopyWithImpl<_Data>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DataCopyWith<_$_Data> get copyWith =>
+      __$$_DataCopyWithImpl<_$_Data>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -435,10 +405,10 @@ class _$_Data implements _Data {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? submitting,
-    TResult Function(bool favorite, Recipe recipe)? data,
-    TResult Function(Failure error)? error,
+    TResult? Function()? initial,
+    TResult? Function()? submitting,
+    TResult? Function(bool favorite, Recipe recipe)? data,
+    TResult? Function(Failure error)? error,
   }) {
     return data?.call(favorite, recipe);
   }
@@ -472,10 +442,10 @@ class _$_Data implements _Data {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Submitting value)? submitting,
-    TResult Function(_Data value)? data,
-    TResult Function(_Error value)? error,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Submitting value)? submitting,
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Error value)? error,
   }) {
     return data?.call(this);
   }
@@ -497,39 +467,39 @@ class _$_Data implements _Data {
 }
 
 abstract class _Data implements FavoriteState {
-  const factory _Data({required bool favorite, required Recipe recipe}) =
-      _$_Data;
+  const factory _Data(
+      {required final bool favorite, required final Recipe recipe}) = _$_Data;
 
   bool get favorite;
   Recipe get recipe;
   @JsonKey(ignore: true)
-  _$DataCopyWith<_Data> get copyWith => throw _privateConstructorUsedError;
+  _$$_DataCopyWith<_$_Data> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class _$$_ErrorCopyWith<$Res> {
+  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
+      __$$_ErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({Failure error});
 
   $FailureCopyWith<$Res> get error;
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+class __$$_ErrorCopyWithImpl<$Res>
+    extends _$FavoriteStateCopyWithImpl<$Res, _$_Error>
+    implements _$$_ErrorCopyWith<$Res> {
+  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+      : super(_value, _then);
 
-  @override
-  _Error get _value => super._value as _Error;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
-    return _then(_Error(
-      error: error == freezed
+    return _then(_$_Error(
+      error: null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as Failure,
@@ -537,6 +507,7 @@ class __$ErrorCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $FailureCopyWith<$Res> get error {
     return $FailureCopyWith<$Res>(_value.error, (value) {
       return _then(_value.copyWith(error: value));
@@ -561,18 +532,18 @@ class _$_Error implements _Error {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Error &&
-            const DeepCollectionEquality().equals(other.error, error));
+            other is _$_Error &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorCopyWith<_Error> get copyWith =>
-      __$ErrorCopyWithImpl<_Error>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -588,10 +559,10 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? submitting,
-    TResult Function(bool favorite, Recipe recipe)? data,
-    TResult Function(Failure error)? error,
+    TResult? Function()? initial,
+    TResult? Function()? submitting,
+    TResult? Function(bool favorite, Recipe recipe)? data,
+    TResult? Function(Failure error)? error,
   }) {
     return error?.call(this.error);
   }
@@ -625,10 +596,10 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Submitting value)? submitting,
-    TResult Function(_Data value)? data,
-    TResult Function(_Error value)? error,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Submitting value)? submitting,
+    TResult? Function(_Data value)? data,
+    TResult? Function(_Error value)? error,
   }) {
     return error?.call(this);
   }
@@ -650,9 +621,10 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements FavoriteState {
-  const factory _Error({required Failure error}) = _$_Error;
+  const factory _Error({required final Failure error}) = _$_Error;
 
   Failure get error;
   @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      throw _privateConstructorUsedError;
 }

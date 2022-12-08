@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'recipe.dart';
@@ -11,34 +12,15 @@ part of 'recipe.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Recipes _$RecipesFromJson(Map<String, dynamic> json) {
   return _Recipes.fromJson(json);
 }
 
 /// @nodoc
-class _$RecipesTearOff {
-  const _$RecipesTearOff();
-
-  _Recipes data({List<Recipe>? recipes}) {
-    return _Recipes(
-      recipes: recipes,
-    );
-  }
-
-  Recipes fromJson(Map<String, Object?> json) {
-    return Recipes.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Recipes = _$RecipesTearOff();
-
-/// @nodoc
 mixin _$Recipes {
   List<Recipe>? get recipes => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<Recipe>? recipes) data,
@@ -46,7 +28,7 @@ mixin _$Recipes {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Recipe>? recipes)? data,
+    TResult? Function(List<Recipe>? recipes)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,7 +44,7 @@ mixin _$Recipes {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Recipes value)? data,
+    TResult? Function(_Recipes value)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,55 +61,60 @@ mixin _$Recipes {
 /// @nodoc
 abstract class $RecipesCopyWith<$Res> {
   factory $RecipesCopyWith(Recipes value, $Res Function(Recipes) then) =
-      _$RecipesCopyWithImpl<$Res>;
+      _$RecipesCopyWithImpl<$Res, Recipes>;
+  @useResult
   $Res call({List<Recipe>? recipes});
 }
 
 /// @nodoc
-class _$RecipesCopyWithImpl<$Res> implements $RecipesCopyWith<$Res> {
+class _$RecipesCopyWithImpl<$Res, $Val extends Recipes>
+    implements $RecipesCopyWith<$Res> {
   _$RecipesCopyWithImpl(this._value, this._then);
 
-  final Recipes _value;
   // ignore: unused_field
-  final $Res Function(Recipes) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? recipes = freezed,
   }) {
     return _then(_value.copyWith(
-      recipes: recipes == freezed
+      recipes: freezed == recipes
           ? _value.recipes
           : recipes // ignore: cast_nullable_to_non_nullable
               as List<Recipe>?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$RecipesCopyWith<$Res> implements $RecipesCopyWith<$Res> {
-  factory _$RecipesCopyWith(_Recipes value, $Res Function(_Recipes) then) =
-      __$RecipesCopyWithImpl<$Res>;
+abstract class _$$_RecipesCopyWith<$Res> implements $RecipesCopyWith<$Res> {
+  factory _$$_RecipesCopyWith(
+          _$_Recipes value, $Res Function(_$_Recipes) then) =
+      __$$_RecipesCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<Recipe>? recipes});
 }
 
 /// @nodoc
-class __$RecipesCopyWithImpl<$Res> extends _$RecipesCopyWithImpl<$Res>
-    implements _$RecipesCopyWith<$Res> {
-  __$RecipesCopyWithImpl(_Recipes _value, $Res Function(_Recipes) _then)
-      : super(_value, (v) => _then(v as _Recipes));
+class __$$_RecipesCopyWithImpl<$Res>
+    extends _$RecipesCopyWithImpl<$Res, _$_Recipes>
+    implements _$$_RecipesCopyWith<$Res> {
+  __$$_RecipesCopyWithImpl(_$_Recipes _value, $Res Function(_$_Recipes) _then)
+      : super(_value, _then);
 
-  @override
-  _Recipes get _value => super._value as _Recipes;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? recipes = freezed,
   }) {
-    return _then(_Recipes(
-      recipes: recipes == freezed
-          ? _value.recipes
+    return _then(_$_Recipes(
+      recipes: freezed == recipes
+          ? _value._recipes
           : recipes // ignore: cast_nullable_to_non_nullable
               as List<Recipe>?,
     ));
@@ -137,13 +124,19 @@ class __$RecipesCopyWithImpl<$Res> extends _$RecipesCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Recipes implements _Recipes {
-  const _$_Recipes({this.recipes});
+  const _$_Recipes({final List<Recipe>? recipes}) : _recipes = recipes;
 
   factory _$_Recipes.fromJson(Map<String, dynamic> json) =>
       _$$_RecipesFromJson(json);
 
+  final List<Recipe>? _recipes;
   @override
-  final List<Recipe>? recipes;
+  List<Recipe>? get recipes {
+    final value = _recipes;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
@@ -154,18 +147,20 @@ class _$_Recipes implements _Recipes {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Recipes &&
-            const DeepCollectionEquality().equals(other.recipes, recipes));
+            other is _$_Recipes &&
+            const DeepCollectionEquality().equals(other._recipes, _recipes));
   }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(recipes));
 
   @JsonKey(ignore: true)
   @override
-  _$RecipesCopyWith<_Recipes> get copyWith =>
-      __$RecipesCopyWithImpl<_Recipes>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_recipes));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RecipesCopyWith<_$_Recipes> get copyWith =>
+      __$$_RecipesCopyWithImpl<_$_Recipes>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -178,7 +173,7 @@ class _$_Recipes implements _Recipes {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<Recipe>? recipes)? data,
+    TResult? Function(List<Recipe>? recipes)? data,
   }) {
     return data?.call(recipes);
   }
@@ -206,7 +201,7 @@ class _$_Recipes implements _Recipes {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Recipes value)? data,
+    TResult? Function(_Recipes value)? data,
   }) {
     return data?.call(this);
   }
@@ -225,12 +220,14 @@ class _$_Recipes implements _Recipes {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecipesToJson(this);
+    return _$$_RecipesToJson(
+      this,
+    );
   }
 }
 
 abstract class _Recipes implements Recipes {
-  const factory _Recipes({List<Recipe>? recipes}) = _$_Recipes;
+  const factory _Recipes({final List<Recipe>? recipes}) = _$_Recipes;
 
   factory _Recipes.fromJson(Map<String, dynamic> json) = _$_Recipes.fromJson;
 
@@ -238,64 +235,13 @@ abstract class _Recipes implements Recipes {
   List<Recipe>? get recipes;
   @override
   @JsonKey(ignore: true)
-  _$RecipesCopyWith<_Recipes> get copyWith =>
+  _$$_RecipesCopyWith<_$_Recipes> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 Recipe _$RecipeFromJson(Map<String, dynamic> json) {
   return _Recipe.fromJson(json);
 }
-
-/// @nodoc
-class _$RecipeTearOff {
-  const _$RecipeTearOff();
-
-  _Recipe call(
-      {bool? vegetarian,
-      bool? vegan,
-      int? preparationMinutes,
-      int? cookingMinutes,
-      int? aggregateLikes,
-      String? creditsText,
-      String? sourceName,
-      int? id,
-      String? title,
-      int? readyInMinutes,
-      int? servings,
-      String? sourceUrl,
-      String? image,
-      String? imageType,
-      String? summary,
-      String? instructions,
-      String? spoonacularSourceUrl}) {
-    return _Recipe(
-      vegetarian: vegetarian,
-      vegan: vegan,
-      preparationMinutes: preparationMinutes,
-      cookingMinutes: cookingMinutes,
-      aggregateLikes: aggregateLikes,
-      creditsText: creditsText,
-      sourceName: sourceName,
-      id: id,
-      title: title,
-      readyInMinutes: readyInMinutes,
-      servings: servings,
-      sourceUrl: sourceUrl,
-      image: image,
-      imageType: imageType,
-      summary: summary,
-      instructions: instructions,
-      spoonacularSourceUrl: spoonacularSourceUrl,
-    );
-  }
-
-  Recipe fromJson(Map<String, Object?> json) {
-    return Recipe.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $Recipe = _$RecipeTearOff();
 
 /// @nodoc
 mixin _$Recipe {
@@ -325,7 +271,8 @@ mixin _$Recipe {
 /// @nodoc
 abstract class $RecipeCopyWith<$Res> {
   factory $RecipeCopyWith(Recipe value, $Res Function(Recipe) then) =
-      _$RecipeCopyWithImpl<$Res>;
+      _$RecipeCopyWithImpl<$Res, Recipe>;
+  @useResult
   $Res call(
       {bool? vegetarian,
       bool? vegan,
@@ -347,13 +294,16 @@ abstract class $RecipeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RecipeCopyWithImpl<$Res> implements $RecipeCopyWith<$Res> {
+class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
+    implements $RecipeCopyWith<$Res> {
   _$RecipeCopyWithImpl(this._value, this._then);
 
-  final Recipe _value;
   // ignore: unused_field
-  final $Res Function(Recipe) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? vegetarian = freezed,
@@ -375,83 +325,84 @@ class _$RecipeCopyWithImpl<$Res> implements $RecipeCopyWith<$Res> {
     Object? spoonacularSourceUrl = freezed,
   }) {
     return _then(_value.copyWith(
-      vegetarian: vegetarian == freezed
+      vegetarian: freezed == vegetarian
           ? _value.vegetarian
           : vegetarian // ignore: cast_nullable_to_non_nullable
               as bool?,
-      vegan: vegan == freezed
+      vegan: freezed == vegan
           ? _value.vegan
           : vegan // ignore: cast_nullable_to_non_nullable
               as bool?,
-      preparationMinutes: preparationMinutes == freezed
+      preparationMinutes: freezed == preparationMinutes
           ? _value.preparationMinutes
           : preparationMinutes // ignore: cast_nullable_to_non_nullable
               as int?,
-      cookingMinutes: cookingMinutes == freezed
+      cookingMinutes: freezed == cookingMinutes
           ? _value.cookingMinutes
           : cookingMinutes // ignore: cast_nullable_to_non_nullable
               as int?,
-      aggregateLikes: aggregateLikes == freezed
+      aggregateLikes: freezed == aggregateLikes
           ? _value.aggregateLikes
           : aggregateLikes // ignore: cast_nullable_to_non_nullable
               as int?,
-      creditsText: creditsText == freezed
+      creditsText: freezed == creditsText
           ? _value.creditsText
           : creditsText // ignore: cast_nullable_to_non_nullable
               as String?,
-      sourceName: sourceName == freezed
+      sourceName: freezed == sourceName
           ? _value.sourceName
           : sourceName // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      readyInMinutes: readyInMinutes == freezed
+      readyInMinutes: freezed == readyInMinutes
           ? _value.readyInMinutes
           : readyInMinutes // ignore: cast_nullable_to_non_nullable
               as int?,
-      servings: servings == freezed
+      servings: freezed == servings
           ? _value.servings
           : servings // ignore: cast_nullable_to_non_nullable
               as int?,
-      sourceUrl: sourceUrl == freezed
+      sourceUrl: freezed == sourceUrl
           ? _value.sourceUrl
           : sourceUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageType: imageType == freezed
+      imageType: freezed == imageType
           ? _value.imageType
           : imageType // ignore: cast_nullable_to_non_nullable
               as String?,
-      summary: summary == freezed
+      summary: freezed == summary
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
               as String?,
-      instructions: instructions == freezed
+      instructions: freezed == instructions
           ? _value.instructions
           : instructions // ignore: cast_nullable_to_non_nullable
               as String?,
-      spoonacularSourceUrl: spoonacularSourceUrl == freezed
+      spoonacularSourceUrl: freezed == spoonacularSourceUrl
           ? _value.spoonacularSourceUrl
           : spoonacularSourceUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$RecipeCopyWith<$Res> implements $RecipeCopyWith<$Res> {
-  factory _$RecipeCopyWith(_Recipe value, $Res Function(_Recipe) then) =
-      __$RecipeCopyWithImpl<$Res>;
+abstract class _$$_RecipeCopyWith<$Res> implements $RecipeCopyWith<$Res> {
+  factory _$$_RecipeCopyWith(_$_Recipe value, $Res Function(_$_Recipe) then) =
+      __$$_RecipeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool? vegetarian,
       bool? vegan,
@@ -473,14 +424,13 @@ abstract class _$RecipeCopyWith<$Res> implements $RecipeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$RecipeCopyWithImpl<$Res> extends _$RecipeCopyWithImpl<$Res>
-    implements _$RecipeCopyWith<$Res> {
-  __$RecipeCopyWithImpl(_Recipe _value, $Res Function(_Recipe) _then)
-      : super(_value, (v) => _then(v as _Recipe));
+class __$$_RecipeCopyWithImpl<$Res>
+    extends _$RecipeCopyWithImpl<$Res, _$_Recipe>
+    implements _$$_RecipeCopyWith<$Res> {
+  __$$_RecipeCopyWithImpl(_$_Recipe _value, $Res Function(_$_Recipe) _then)
+      : super(_value, _then);
 
-  @override
-  _Recipe get _value => super._value as _Recipe;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? vegetarian = freezed,
@@ -501,72 +451,72 @@ class __$RecipeCopyWithImpl<$Res> extends _$RecipeCopyWithImpl<$Res>
     Object? instructions = freezed,
     Object? spoonacularSourceUrl = freezed,
   }) {
-    return _then(_Recipe(
-      vegetarian: vegetarian == freezed
+    return _then(_$_Recipe(
+      vegetarian: freezed == vegetarian
           ? _value.vegetarian
           : vegetarian // ignore: cast_nullable_to_non_nullable
               as bool?,
-      vegan: vegan == freezed
+      vegan: freezed == vegan
           ? _value.vegan
           : vegan // ignore: cast_nullable_to_non_nullable
               as bool?,
-      preparationMinutes: preparationMinutes == freezed
+      preparationMinutes: freezed == preparationMinutes
           ? _value.preparationMinutes
           : preparationMinutes // ignore: cast_nullable_to_non_nullable
               as int?,
-      cookingMinutes: cookingMinutes == freezed
+      cookingMinutes: freezed == cookingMinutes
           ? _value.cookingMinutes
           : cookingMinutes // ignore: cast_nullable_to_non_nullable
               as int?,
-      aggregateLikes: aggregateLikes == freezed
+      aggregateLikes: freezed == aggregateLikes
           ? _value.aggregateLikes
           : aggregateLikes // ignore: cast_nullable_to_non_nullable
               as int?,
-      creditsText: creditsText == freezed
+      creditsText: freezed == creditsText
           ? _value.creditsText
           : creditsText // ignore: cast_nullable_to_non_nullable
               as String?,
-      sourceName: sourceName == freezed
+      sourceName: freezed == sourceName
           ? _value.sourceName
           : sourceName // ignore: cast_nullable_to_non_nullable
               as String?,
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      readyInMinutes: readyInMinutes == freezed
+      readyInMinutes: freezed == readyInMinutes
           ? _value.readyInMinutes
           : readyInMinutes // ignore: cast_nullable_to_non_nullable
               as int?,
-      servings: servings == freezed
+      servings: freezed == servings
           ? _value.servings
           : servings // ignore: cast_nullable_to_non_nullable
               as int?,
-      sourceUrl: sourceUrl == freezed
+      sourceUrl: freezed == sourceUrl
           ? _value.sourceUrl
           : sourceUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      image: image == freezed
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageType: imageType == freezed
+      imageType: freezed == imageType
           ? _value.imageType
           : imageType // ignore: cast_nullable_to_non_nullable
               as String?,
-      summary: summary == freezed
+      summary: freezed == summary
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
               as String?,
-      instructions: instructions == freezed
+      instructions: freezed == instructions
           ? _value.instructions
           : instructions // ignore: cast_nullable_to_non_nullable
               as String?,
-      spoonacularSourceUrl: spoonacularSourceUrl == freezed
+      spoonacularSourceUrl: freezed == spoonacularSourceUrl
           ? _value.spoonacularSourceUrl
           : spoonacularSourceUrl // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -643,86 +593,93 @@ class _$_Recipe implements _Recipe {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Recipe &&
-            const DeepCollectionEquality()
-                .equals(other.vegetarian, vegetarian) &&
-            const DeepCollectionEquality().equals(other.vegan, vegan) &&
-            const DeepCollectionEquality()
-                .equals(other.preparationMinutes, preparationMinutes) &&
-            const DeepCollectionEquality()
-                .equals(other.cookingMinutes, cookingMinutes) &&
-            const DeepCollectionEquality()
-                .equals(other.aggregateLikes, aggregateLikes) &&
-            const DeepCollectionEquality()
-                .equals(other.creditsText, creditsText) &&
-            const DeepCollectionEquality()
-                .equals(other.sourceName, sourceName) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality()
-                .equals(other.readyInMinutes, readyInMinutes) &&
-            const DeepCollectionEquality().equals(other.servings, servings) &&
-            const DeepCollectionEquality().equals(other.sourceUrl, sourceUrl) &&
-            const DeepCollectionEquality().equals(other.image, image) &&
-            const DeepCollectionEquality().equals(other.imageType, imageType) &&
-            const DeepCollectionEquality().equals(other.summary, summary) &&
-            const DeepCollectionEquality()
-                .equals(other.instructions, instructions) &&
-            const DeepCollectionEquality()
-                .equals(other.spoonacularSourceUrl, spoonacularSourceUrl));
+            other is _$_Recipe &&
+            (identical(other.vegetarian, vegetarian) ||
+                other.vegetarian == vegetarian) &&
+            (identical(other.vegan, vegan) || other.vegan == vegan) &&
+            (identical(other.preparationMinutes, preparationMinutes) ||
+                other.preparationMinutes == preparationMinutes) &&
+            (identical(other.cookingMinutes, cookingMinutes) ||
+                other.cookingMinutes == cookingMinutes) &&
+            (identical(other.aggregateLikes, aggregateLikes) ||
+                other.aggregateLikes == aggregateLikes) &&
+            (identical(other.creditsText, creditsText) ||
+                other.creditsText == creditsText) &&
+            (identical(other.sourceName, sourceName) ||
+                other.sourceName == sourceName) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.readyInMinutes, readyInMinutes) ||
+                other.readyInMinutes == readyInMinutes) &&
+            (identical(other.servings, servings) ||
+                other.servings == servings) &&
+            (identical(other.sourceUrl, sourceUrl) ||
+                other.sourceUrl == sourceUrl) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.imageType, imageType) ||
+                other.imageType == imageType) &&
+            (identical(other.summary, summary) || other.summary == summary) &&
+            (identical(other.instructions, instructions) ||
+                other.instructions == instructions) &&
+            (identical(other.spoonacularSourceUrl, spoonacularSourceUrl) ||
+                other.spoonacularSourceUrl == spoonacularSourceUrl));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(vegetarian),
-      const DeepCollectionEquality().hash(vegan),
-      const DeepCollectionEquality().hash(preparationMinutes),
-      const DeepCollectionEquality().hash(cookingMinutes),
-      const DeepCollectionEquality().hash(aggregateLikes),
-      const DeepCollectionEquality().hash(creditsText),
-      const DeepCollectionEquality().hash(sourceName),
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(readyInMinutes),
-      const DeepCollectionEquality().hash(servings),
-      const DeepCollectionEquality().hash(sourceUrl),
-      const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(imageType),
-      const DeepCollectionEquality().hash(summary),
-      const DeepCollectionEquality().hash(instructions),
-      const DeepCollectionEquality().hash(spoonacularSourceUrl));
 
   @JsonKey(ignore: true)
   @override
-  _$RecipeCopyWith<_Recipe> get copyWith =>
-      __$RecipeCopyWithImpl<_Recipe>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      vegetarian,
+      vegan,
+      preparationMinutes,
+      cookingMinutes,
+      aggregateLikes,
+      creditsText,
+      sourceName,
+      id,
+      title,
+      readyInMinutes,
+      servings,
+      sourceUrl,
+      image,
+      imageType,
+      summary,
+      instructions,
+      spoonacularSourceUrl);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RecipeCopyWith<_$_Recipe> get copyWith =>
+      __$$_RecipeCopyWithImpl<_$_Recipe>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecipeToJson(this);
+    return _$$_RecipeToJson(
+      this,
+    );
   }
 }
 
 abstract class _Recipe implements Recipe {
   const factory _Recipe(
-      {bool? vegetarian,
-      bool? vegan,
-      int? preparationMinutes,
-      int? cookingMinutes,
-      int? aggregateLikes,
-      String? creditsText,
-      String? sourceName,
-      int? id,
-      String? title,
-      int? readyInMinutes,
-      int? servings,
-      String? sourceUrl,
-      String? image,
-      String? imageType,
-      String? summary,
-      String? instructions,
-      String? spoonacularSourceUrl}) = _$_Recipe;
+      {final bool? vegetarian,
+      final bool? vegan,
+      final int? preparationMinutes,
+      final int? cookingMinutes,
+      final int? aggregateLikes,
+      final String? creditsText,
+      final String? sourceName,
+      final int? id,
+      final String? title,
+      final int? readyInMinutes,
+      final int? servings,
+      final String? sourceUrl,
+      final String? image,
+      final String? imageType,
+      final String? summary,
+      final String? instructions,
+      final String? spoonacularSourceUrl}) = _$_Recipe;
 
   factory _Recipe.fromJson(Map<String, dynamic> json) = _$_Recipe.fromJson;
 
@@ -762,5 +719,6 @@ abstract class _Recipe implements Recipe {
   String? get spoonacularSourceUrl;
   @override
   @JsonKey(ignore: true)
-  _$RecipeCopyWith<_Recipe> get copyWith => throw _privateConstructorUsedError;
+  _$$_RecipeCopyWith<_$_Recipe> get copyWith =>
+      throw _privateConstructorUsedError;
 }
