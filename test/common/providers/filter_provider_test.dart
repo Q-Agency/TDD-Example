@@ -20,7 +20,7 @@ void main() {
         overrides: [filterProvider.overrideWith((_) => FilterFavorites.all)],
       );
       // Assert
-      expect(container.read(filterProvider), FilterFavorites);
+      expect(container.read(filterProvider), FilterFavorites.all);
     });
     test(
         'filter provider state should be FilterFavorites.vegan when state overridden to vegan',

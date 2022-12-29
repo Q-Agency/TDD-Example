@@ -49,52 +49,57 @@ void main() {
 
     test(
         'filtered favorites list provider should return list with all recipes initially',
-        () async* {
+        () async {
       // Arrange - create container that stores the state of providers
       // Arrange - override behaviour of filterProvider and set up dependencies
       setUpSuccess();
       final container = ProviderContainer(
         overrides: [
-          favoriteListNotifierProvider.overrideWithProvider(
-              AutoDisposeStateNotifierProvider(
-                  (ref) => FavoriteListNotifier(mockFavoriteRepository))),
+          favoriteListNotifierProvider.overrideWith(
+              (ref) => FavoriteListNotifier(mockFavoriteRepository))
         ],
       );
       // Act
-      yield mockFavoriteRepository.getFavorites();
+      await container
+          .read(favoriteListNotifierProvider.notifier)
+          .getFavorites();
       // Assert
       expect(container.read(filteredFavoritesListProvider), recipes);
     });
     test(
         'filtered favorites list provider should return list with vegan recipes after filterProviders state changes to FilterFavorites.vegan',
-        () async* {
+        () async {
       setUpSuccess();
       final container = ProviderContainer(
         overrides: [
-          favoriteListNotifierProvider.overrideWithProvider(
-              AutoDisposeStateNotifierProvider(
-                  (ref) => FavoriteListNotifier(mockFavoriteRepository))),
-          filterProvider.overrideWithProvider(
-              StateProvider((ref) => FilterFavorites.vegan)),
+          favoriteListNotifierProvider.overrideWith(
+              (ref) => FavoriteListNotifier(mockFavoriteRepository)),
+          filterProvider.overrideWith((ref) => FilterFavorites.vegan)
         ],
       );
-      yield mockFavoriteRepository.getFavorites();
+      // Act
+      await container
+          .read(favoriteListNotifierProvider.notifier)
+          .getFavorites();
+      // Assert
       expect(container.read(filteredFavoritesListProvider), filteredRecipes);
     });
     test(
         'filtered favorites list provider should return list with all recipes after filterProviders state changes to FilterFavorites.all',
-        () async* {
+        () async {
       setUpSuccess();
       final container = ProviderContainer(
         overrides: [
-          favoriteListNotifierProvider.overrideWithProvider(
-              AutoDisposeStateNotifierProvider(
-                  (ref) => FavoriteListNotifier(mockFavoriteRepository))),
-          filterProvider.overrideWithProvider(
-              StateProvider((ref) => FilterFavorites.all)),
+          favoriteListNotifierProvider.overrideWith(
+              (ref) => FavoriteListNotifier(mockFavoriteRepository)),
+          filterProvider.overrideWith((ref) => FilterFavorites.all)
         ],
       );
-      yield mockFavoriteRepository.getFavorites();
+      // Act
+      await container
+          .read(favoriteListNotifierProvider.notifier)
+          .getFavorites();
+      // Assert
       expect(container.read(filteredFavoritesListProvider), recipes);
     });
   });
