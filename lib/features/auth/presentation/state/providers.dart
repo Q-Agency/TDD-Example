@@ -9,7 +9,7 @@ import 'package:flutter_tdd_q/features/auth/data/datasources/auth_remote_data_so
 import 'package:flutter_tdd_q/features/auth/data/repositories/auth_repository.dart';
 import 'package:flutter_tdd_q/features/auth/presentation/state/auth_notifier.dart';
 import 'package:flutter_tdd_q/features/auth/presentation/state/auth_state.dart';
-import 'package:riverpod/riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final userProvider = Provider<UserProvider>((ref) => CurrentUserProvider());
 final firebaseFirestoreProvider =

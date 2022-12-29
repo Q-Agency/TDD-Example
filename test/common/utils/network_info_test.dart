@@ -8,27 +8,27 @@ import 'network_info_test.mocks.dart';
 
 @GenerateMocks([Connectivity])
 void main() {
-  late Connectivity _connectivity;
-  late NetworkInfo _networkInfo;
+  late Connectivity connectivity;
+  late NetworkInfo networkInfo;
 
   setUp(() {
-    _connectivity = MockConnectivity();
-    _networkInfo = ConnectivityNetworkInfo(_connectivity);
+    connectivity = MockConnectivity();
+    networkInfo = ConnectivityNetworkInfo(connectivity);
   });
 
   group('connectivity', () {
     test('device is online', () async {
-      when(_connectivity.checkConnectivity())
+      when(connectivity.checkConnectivity())
           .thenAnswer((_) async => ConnectivityResult.wifi);
 
-      _networkInfo.isConnected.then((value) => true);
-      verify(_connectivity.checkConnectivity());
+      networkInfo.isConnected.then((value) => true);
+      verify(connectivity.checkConnectivity());
     });
     test('device is offline', () async {
-      when(_connectivity.checkConnectivity())
+      when(connectivity.checkConnectivity())
           .thenAnswer((_) async => ConnectivityResult.none);
-      _networkInfo.isConnected.then((value) => false);
-      verify(_connectivity.checkConnectivity());
+      networkInfo.isConnected.then((value) => false);
+      verify(connectivity.checkConnectivity());
     });
   });
 }

@@ -9,7 +9,7 @@ class CircularLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ColoredBox(
       color: Theme.of(context).scaffoldBackgroundColor,
       child: const Center(
         child: CircularProgressIndicator(

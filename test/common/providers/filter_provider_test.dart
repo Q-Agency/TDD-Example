@@ -8,31 +8,25 @@ void main() {
     test('filter provider initial state should be FilterFavorites.all', () {
       // Arrange - create container that stores the state of providers
       final container = ProviderContainer();
-      // Assert 
+      // Assert
       expect(container.read(filterProvider), FilterFavorites.all);
     });
     test(
-        'filter provider state should be FilterFavorites.all when state overriden to all',
+        'filter provider state should be FilterFavorites.all when state overridden to all',
         () {
       // Arrange - create container that stores the state of providers
       // Arrange - override behaviour of filterProvider
       final container = ProviderContainer(
-        overrides: [
-          filterProvider
-              .overrideWithProvider(StateProvider((ref) => FilterFavorites.all))
-        ],
+        overrides: [filterProvider.overrideWith((_) => FilterFavorites.all)],
       );
-      // Assert 
-      expect(container.read(filterProvider), FilterFavorites.all);
+      // Assert
+      expect(container.read(filterProvider), FilterFavorites);
     });
     test(
-        'filter provider state should be FilterFavorites.vegan when state overriden to vegan',
+        'filter provider state should be FilterFavorites.vegan when state overridden to vegan',
         () {
       final container = ProviderContainer(
-        overrides: [
-          filterProvider.overrideWithProvider(
-              StateProvider((ref) => FilterFavorites.vegan))
-        ],
+        overrides: [filterProvider.overrideWith((_) => FilterFavorites.vegan)],
       );
       expect(container.read(filterProvider), FilterFavorites.vegan);
     });
