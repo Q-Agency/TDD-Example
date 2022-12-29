@@ -5,18 +5,18 @@ class FlashbarMessages {
   static void showFlashbarMessage(BuildContext context,
       {required String message,
       Duration duration = const Duration(seconds: 3)}) {
-    showFlashMessage(context, message, false);
+    showFlashMessage(context, message, isErrorMessage: false);
   }
 
   static void showErrorMessage(BuildContext context,
       {required String message,
       Duration duration = const Duration(seconds: 3)}) {
-    showFlashMessage(context, message, true);
+    showFlashMessage(context, message, isErrorMessage: true);
   }
 }
 
-Future<void> showFlashMessage(
-    BuildContext context, String message, bool isErrorMessage) {
+Future<void> showFlashMessage(BuildContext context, String message,
+    {required bool isErrorMessage}) {
   return showFlash(
     duration: const Duration(seconds: 2),
     context: context,

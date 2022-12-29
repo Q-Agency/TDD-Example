@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_tdd_q/features/favorite/data/repositories/favorite_repository.dart';
 import 'package:flutter_tdd_q/features/favorite/presentation/state/favorite_list_state.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class FavoriteListNotifier extends StateNotifier<FavoriteListState> {
   final FavoriteRepository _favoriteRepository;

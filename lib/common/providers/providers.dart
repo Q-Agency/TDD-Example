@@ -15,8 +15,8 @@ import 'package:flutter_tdd_q/features/flexiterian/presentation/pages/state/prov
 import 'package:flutter_tdd_q/features/vegan/presentation/state/provider/vegan_recipes_notifier.dart';
 import 'package:flutter_tdd_q/features/vegan/presentation/state/provider/vegan_recipes_state.dart';
 import 'package:flutter_tdd_q/main/app_environment.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:riverpod/riverpod.dart';
 
 final dioProvider = Provider<Dio>((ref) {
   final instance = Dio(BaseOptions(
