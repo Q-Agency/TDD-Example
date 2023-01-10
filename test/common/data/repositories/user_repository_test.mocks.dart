@@ -453,6 +453,16 @@ class MockFirebaseFirestore extends _i1.Mock implements _i4.FirebaseFirestore {
         returnValue: _i7.Future<void>.value(),
         returnValueForMissingStub: _i7.Future<void>.value(),
       ) as _i7.Future<void>);
+  @override
+  _i7.Future<void> setIndexConfigurationFromJSON(String? json) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setIndexConfigurationFromJSON,
+          [json],
+        ),
+        returnValue: _i7.Future<void>.value(),
+        returnValueForMissingStub: _i7.Future<void>.value(),
+      ) as _i7.Future<void>);
 }
 
 /// A class which mocks [NetworkInfo].
