@@ -58,7 +58,7 @@ void main() {
         // Arrange
         setupSuccess();
         // Act
-        await for (final _ in favoriteRepository.getFavorites()) {}
+        await favoriteRepository.getFavorites().forEach((_) {});
         // Assert
         verify(mockFavoriteRemoteDataSource.getFavorites());
       },
