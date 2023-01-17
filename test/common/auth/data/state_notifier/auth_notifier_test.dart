@@ -18,14 +18,14 @@ import 'auth_notifier_test.mocks.dart';
 @GenerateMocks([UserProvider, AuthRepository, UserRepository])
 void main() {
   // Prepare prerequisites
-  late UserProvider _userProvider;
-  late AuthRepository _authRepo;
-  late UserRepository _userRepository;
+  late UserProvider userProvider;
+  late AuthRepository authRepo;
+  late UserRepository userRepository;
 
   setUp(() {
-    _userProvider = MockUserProvider();
-    _authRepo = MockAuthRepository();
-    _userRepository = MockUserRepository();
+    userProvider = MockUserProvider();
+    authRepo = MockAuthRepository();
+    userRepository = MockUserRepository();
   });
 
   AuthSuccess getAuthSuccessWithCompletedRegistration() {
@@ -49,7 +49,7 @@ void main() {
   stateNotifierTest<AuthNotifier, AuthState>(
     "Emits [] when no methods are called",
     // Arrange - create notifier
-    build: () => AuthNotifier(_userProvider, _authRepo, _userRepository),
+    build: () => AuthNotifier(userProvider, authRepo, userRepository),
     // Act - call the methods
     actions: (_) {},
     // Assert
@@ -61,10 +61,10 @@ void main() {
     stateNotifierTest<AuthNotifier, AuthState>(
       'Emits [AuthState.authenticated] when user is already registered and has successfully logged in',
       // Arrange - create notifier
-      build: () => AuthNotifier(_userProvider, _authRepo, _userRepository),
+      build: () => AuthNotifier(userProvider, authRepo, userRepository),
       // Arrange - set up dependencies
       setUp: () async {
-        when(_authRepo.signIn()).thenAnswer(
+        when(authRepo.signIn()).thenAnswer(
           (_) async => Future.value(
             right(getAuthSuccessWithCompletedRegistration()),
           ),
@@ -80,9 +80,9 @@ void main() {
 
     stateNotifierTest<AuthNotifier, AuthState>(
       'Emits [AuthState.failure] when user has not successfully logged in',
-      build: () => AuthNotifier(_userProvider, _authRepo, _userRepository),
+      build: () => AuthNotifier(userProvider, authRepo, userRepository),
       setUp: () async {
-        when(_authRepo.signIn()).thenAnswer(
+        when(authRepo.signIn()).thenAnswer(
           (_) async => Future.value(
             left(
               const Failure.authenticationFailure(
@@ -100,15 +100,15 @@ void main() {
 
     stateNotifierTest<AuthNotifier, AuthState>(
       'Emits [AuthState.savedUser,AuthState.authenticated] when user is not registered and has successfully logged in and successfully saved user in the firebase',
-      build: () => AuthNotifier(_userProvider, _authRepo, _userRepository),
+      build: () => AuthNotifier(userProvider, authRepo, userRepository),
       setUp: () async {
-        when(_authRepo.signIn()).thenAnswer(
+        when(authRepo.signIn()).thenAnswer(
           (_) async => Future.value(
             right(getAuthSuccessWithUncompletedRegistration()),
           ),
         );
 
-        when(_userRepository.createUser(user: getMockedUser())).thenAnswer(
+        when(userRepository.createUser(user: getMockedUser())).thenAnswer(
           (_) async => Future.value(
             right(
               getMockedUser(),
@@ -125,15 +125,15 @@ void main() {
 
     stateNotifierTest<AuthNotifier, AuthState>(
       'Emits [AuthState.savedUser,AuthState.authenticated] when user is not registered and has successfully logged in and successfully saved user in the firebase',
-      build: () => AuthNotifier(_userProvider, _authRepo, _userRepository),
+      build: () => AuthNotifier(userProvider, authRepo, userRepository),
       setUp: () async {
-        when(_authRepo.signIn()).thenAnswer(
+        when(authRepo.signIn()).thenAnswer(
           (_) async => Future.value(
             right(getAuthSuccessWithUncompletedRegistration()),
           ),
         );
 
-        when(_userRepository.createUser(user: getMockedUser())).thenAnswer(
+        when(userRepository.createUser(user: getMockedUser())).thenAnswer(
           (_) async => Future.value(
             left(
               const Failure.authenticationFailure(AuthFailureReason.other),
@@ -153,9 +153,9 @@ void main() {
   group('sign out tests', () {
     stateNotifierTest<AuthNotifier, AuthState>(
       'Emits [AuthState.unauthenticated] when user signed out successfully',
-      build: () => AuthNotifier(_userProvider, _authRepo, _userRepository),
+      build: () => AuthNotifier(userProvider, authRepo, userRepository),
       setUp: () async {
-        when(_authRepo.signOut()).thenAnswer((_) => Future.value(right(unit)));
+        when(authRepo.signOut()).thenAnswer((_) => Future.value(right(unit)));
       },
       actions: (AuthNotifier stateNotifier) async {
         await stateNotifier.signOut();
@@ -166,9 +166,9 @@ void main() {
     );
     stateNotifierTest<AuthNotifier, AuthState>(
       'Emits [AuthState.failure(Failure.signOutError())] when user signed out failed',
-      build: () => AuthNotifier(_userProvider, _authRepo, _userRepository),
+      build: () => AuthNotifier(userProvider, authRepo, userRepository),
       setUp: () async {
-        when(_authRepo.signOut()).thenAnswer(
+        when(authRepo.signOut()).thenAnswer(
             (_) => Future.value(const Left(Failure.signOutError())));
       },
       actions: (AuthNotifier stateNotifier) async {
@@ -183,11 +183,11 @@ void main() {
   group('check if authenticated tests', () {
     stateNotifierTest<AuthNotifier, AuthState>(
       'Emits [AuthState.loading,AuthState.authenticated] when registration is commpleted',
-      build: () => AuthNotifier(_userProvider, _authRepo, _userRepository),
+      build: () => AuthNotifier(userProvider, authRepo, userRepository),
       setUp: () async {
-        when(_authRepo.isRegistrationComplete())
+        when(authRepo.isRegistrationComplete())
             .thenAnswer((realInvocation) => Future.value(true));
-        when(_userProvider.setup())
+        when(userProvider.setup())
             .thenAnswer((realInvocation) => Future.value(true));
       },
       actions: (stateNotifier) => stateNotifier.checkIfAuthenticated(),
@@ -199,11 +199,11 @@ void main() {
 
     stateNotifierTest<AuthNotifier, AuthState>(
       'Emits [AuthState.loading,AuthState.unauthenticated] when registration is not completed',
-      build: () => AuthNotifier(_userProvider, _authRepo, _userRepository),
+      build: () => AuthNotifier(userProvider, authRepo, userRepository),
       setUp: () async {
-        when(_authRepo.isRegistrationComplete())
+        when(authRepo.isRegistrationComplete())
             .thenAnswer((realInvocation) => Future.value(false));
-        when(_userProvider.setup())
+        when(userProvider.setup())
             .thenAnswer((realInvocation) => Future.value(true));
       },
       actions: (stateNotifier) => stateNotifier.checkIfAuthenticated(),

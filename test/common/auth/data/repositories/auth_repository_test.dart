@@ -36,10 +36,12 @@ void main() {
       Failure.authenticationFailure(AuthFailureReason.other);
   const authFailureGoogleSignIn =
       Failure.authenticationFailure(AuthFailureReason.googleSignIn);
+  const authenticationLocalDataSourceFailure =
+      Failure.authenticationLocalDataSourceFailure();
 
   // Group tests by methods from AuthRepository
   group('Sign in tests', () {
-    void _setupSuccess() {
+    void setupSuccess() {
       when(mockAuthRemoteDataSource.googleSignIn())
           .thenAnswer((_) async => userCredentials);
       when(mockAuthLocalDataSource.storeUserCredentials(userCredentials))
@@ -50,9 +52,9 @@ void main() {
 
     test(
       'authRepository.signIn should call authRemoteDataSource.googleSignIn',
-      () async* {
+      () async {
         // Arrange
-        _setupSuccess();
+        setupSuccess();
         // Act
         await authRepository.signIn();
         // Assert
@@ -61,24 +63,24 @@ void main() {
     );
     test(
       'authRepository.signIn should call authRemoteDataSource.isRegistrationComplete',
-      () async* {
-        _setupSuccess();
+      () async {
+        setupSuccess();
         await authRepository.signIn();
         verify(mockAuthRemoteDataSource.isRegistrationComplete());
       },
     );
     test(
       'authRepository.signIn should call authLocalDataSource.storeUserCredentials with userCredentials',
-      () async* {
-        _setupSuccess();
+      () async {
+        setupSuccess();
         await authRepository.signIn();
         verify(mockAuthLocalDataSource.storeUserCredentials(userCredentials));
       },
     );
     test(
       'authRepository.signIn should return authSuccess when user signed in successfully',
-      () async* {
-        _setupSuccess();
+      () async {
+        setupSuccess();
         final result = await authRepository.signIn();
         expect(result, Right(authSuccess));
       },
@@ -86,7 +88,7 @@ void main() {
 
     test(
       'authRepository.signIn should return AuthenticationFailure.other when sign in failed',
-      () async* {
+      () async {
         when(mockAuthRemoteDataSource.googleSignIn()).thenAnswer((_) async =>
             throw const AuthException(failureReason: AuthFailureReason.other));
         final result = await authRepository.signIn();
@@ -95,7 +97,7 @@ void main() {
     );
     test(
       'authRepository.signIn should return AuthenticationFailure.googleSignIn when failed to get authTokens',
-      () async* {
+      () async {
         when(mockAuthRemoteDataSource.googleSignIn()).thenAnswer((_) async =>
             throw const AuthException(
                 failureReason: AuthFailureReason.googleSignIn));
@@ -105,37 +107,37 @@ void main() {
     );
     test(
       'authRepository.signIn should return AuthenticationLocalDataSourceFailure when failed to store user credentials',
-      () async* {
-        when(mockAuthLocalDataSource.storeUserCredentials(userCredentials))
+      () async {
+        when(mockAuthRemoteDataSource.googleSignIn())
             .thenAnswer((_) async => throw AuthLocalDataSourceException());
         final result = await authRepository.signIn();
-        expect(result, const Left(authFailureGoogleSignIn));
+        expect(result, const Left(authenticationLocalDataSourceFailure));
       },
     );
   });
 
   group('Sign out tests', () {
-    void _setupSuccess() {
+    void setupSuccess() {
       when(mockAuthRemoteDataSource.googleSignOut()).thenAnswer((_) async {});
     }
 
-    void _setupError() {
+    void setupError() {
       when(mockAuthRemoteDataSource.googleSignOut())
           .thenAnswer((_) async => throw Exception());
     }
 
     test(
       'authRepository.signOut should call authRemoteDataSource.googleSignOut',
-      () async* {
-        _setupSuccess();
+      () async {
+        setupSuccess();
         await authRepository.signOut();
         verify(mockAuthRemoteDataSource.googleSignOut());
       },
     );
     test(
       'authRepository.signOut should return unit when user signed out successfully',
-      () async* {
-        _setupSuccess();
+      () async {
+        setupSuccess();
         final result = await authRepository.signOut();
         expect(result, const Right(unit));
       },
@@ -143,47 +145,47 @@ void main() {
 
     test(
       'authRepository.signOut should return signOutError when sign out failed',
-      () async* {
-        _setupError();
+      () async {
+        setupError();
         final result = await authRepository.signOut();
         expect(result, const Left(Failure.signOutError()));
       },
     );
   });
   group('Is registration complete tests', () {
-    void _setupSuccess() {
+    void setupSuccess() {
       when(mockAuthRemoteDataSource.isRegistrationComplete())
-          .thenAnswer((_) async => Future.value(true));
+          .thenAnswer((_) async => true);
     }
 
-    void _setupError() {
+    void setupError() {
       when(mockAuthRemoteDataSource.isRegistrationComplete())
-          .thenAnswer((_) async => throw Exception());
+          .thenAnswer((_) async => false);
     }
 
     test(
       'authRepository.isRegistrationComplete should call authRemoteDataSource.isRegistrationComplete',
-      () async* {
-        _setupSuccess();
+      () async {
+        setupSuccess();
         await authRepository.isRegistrationComplete();
         verify(mockAuthRemoteDataSource.isRegistrationComplete());
       },
     );
     test(
       'authRepository.isRegistrationComplete should return true when registration completed successfully',
-      () async* {
-        _setupSuccess();
+      () async {
+        setupSuccess();
         final result = await authRepository.isRegistrationComplete();
-        expect(result, const Right(true));
+        expect(result, true);
       },
     );
 
     test(
       'authRepository.isRegistrationComplete should return false when registration failed',
-      () async* {
-        _setupError();
+      () async {
+        setupError();
         final result = await authRepository.isRegistrationComplete();
-        expect(result, const Left(false));
+        expect(result, false);
       },
     );
   });

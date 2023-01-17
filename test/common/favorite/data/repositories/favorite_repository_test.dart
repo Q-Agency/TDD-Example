@@ -40,13 +40,13 @@ void main() {
 
   // Group tests by methods from FavoriteRepository
   group('get recipes from favourites tests', () {
-    void _setupSuccess() {
+    void setupSuccess() {
       when(mockFavoriteRemoteDataSource.getFavorites()).thenAnswer((_) async* {
         yield* recipesStream;
       });
     }
 
-    void _setupError() {
+    void setupError() {
       when(mockFavoriteRemoteDataSource.getFavorites()).thenAnswer((_) async* {
         yield* throw DataSourceException();
       });
@@ -54,11 +54,11 @@ void main() {
 
     test(
       'favoriteRepository.getFavorites should call favouriteRemoteDataSource.getFavorites',
-      () async* {
+      () async {
         // Arrange
-        _setupSuccess();
+        setupSuccess();
         // Act
-        yield* favoriteRepository.getFavorites();
+        await favoriteRepository.getFavorites().forEach((_) {});
         // Assert
         verify(mockFavoriteRemoteDataSource.getFavorites());
       },
@@ -67,7 +67,7 @@ void main() {
     test(
         'should return streams with listOfRecipesList lists when favoriteRemoteDataSource successfully fetched recipes from favorites',
         () async {
-      _setupSuccess();
+      setupSuccess();
       int i = 0;
       await favoriteRepository.getFavorites().forEach((result) {
         expect(result, right(listOfRecipesList[i]));
@@ -76,9 +76,9 @@ void main() {
     });
 
     test(
-      'should return failure when favoriteRemoteDataSource unsuccessfully fetched recipes from                               favorites',
+      'should return failure when favoriteRemoteDataSource unsuccessfully fetched recipes from favorites',
       () async {
-        _setupError();
+        setupError();
         await favoriteRepository.getFavorites().forEach((result) {
           expect(result, left(const Failure.serverError()));
         });
@@ -87,12 +87,12 @@ void main() {
   });
 
   group('add recipe to favorites tests', () {
-    void _setupSuccess() {
+    void setupSuccess() {
       when(mockFavoriteRemoteDataSource.addFavorite(recipe: recipe))
           .thenAnswer((_) async => unit);
     }
 
-    void _setupError() {
+    void setupError() {
       when(mockFavoriteRemoteDataSource.addFavorite(recipe: recipe))
           .thenAnswer((_) async => throw DataSourceException());
     }
@@ -100,7 +100,7 @@ void main() {
     test(
       'favoriteRepository.addToFavorites should call favoriteRemoteDataSource.addFavorite with recipe',
       () async {
-        _setupSuccess();
+        setupSuccess();
         await favoriteRepository.addToFavorites(recipe: recipe);
         verify(mockFavoriteRemoteDataSource.addFavorite(recipe: recipe));
       },
@@ -109,7 +109,7 @@ void main() {
     test(
       'should return right(unit) when favoriteRemoteDataSource successfully added recipe to favorites',
       () async {
-        _setupSuccess();
+        setupSuccess();
         final result = await favoriteRepository.addToFavorites(recipe: recipe);
         final expected = right(unit);
         expect(result, expected);
@@ -119,7 +119,7 @@ void main() {
     test(
       'should return failure when favoriteRemoteDataSource unsuccessfully added recipe to favorites',
       () async {
-        _setupError();
+        setupError();
         final result = await favoriteRepository.addToFavorites(recipe: recipe);
         final expected = left(const Failure.serverError());
         expect(result, expected);
@@ -128,12 +128,12 @@ void main() {
   });
 
   group('remove recipe from favorites tests', () {
-    void _setupSuccess() {
+    void setupSuccess() {
       when(mockFavoriteRemoteDataSource.removeFavorite(recipe: recipe))
           .thenAnswer((_) async => unit);
     }
 
-    void _setupError() {
+    void setupError() {
       when(mockFavoriteRemoteDataSource.removeFavorite(recipe: recipe))
           .thenAnswer((_) async => throw DataSourceException());
     }
@@ -141,7 +141,7 @@ void main() {
     test(
       'favouriteRepository.removeFromFavorites should call favoriteRemoteDataSource.removeFavorite with recipe',
       () async {
-        _setupSuccess();
+        setupSuccess();
         await favoriteRepository.removeFromFavorites(recipe: recipe);
         verify(mockFavoriteRemoteDataSource.removeFavorite(recipe: recipe));
       },
@@ -150,7 +150,7 @@ void main() {
     test(
       'should return right(unit) when favoriteRemoteDataSource successfully removed recipe from favorites',
       () async {
-        _setupSuccess();
+        setupSuccess();
         final result =
             await favoriteRepository.removeFromFavorites(recipe: recipe);
         final expected = right(unit);
@@ -161,7 +161,7 @@ void main() {
     test(
       'should return failure when favoriteRemoteDataSource unsuccessfully removed recipe from favorites',
       () async {
-        _setupError();
+        setupError();
         final result =
             await favoriteRepository.removeFromFavorites(recipe: recipe);
         final expected = left(const Failure.serverError());

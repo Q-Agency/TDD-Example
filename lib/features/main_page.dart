@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_tdd_q/common/routes/router.gr.dart';
 import 'package:flutter_tdd_q/common/ui/colors.dart';
 import 'package:flutter_tdd_q/features/vegan/presentation/widgets/app_bar_widget.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'auth/presentation/state/providers.dart';
 

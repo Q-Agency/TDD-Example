@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class Observers extends ProviderObserver {
@@ -8,7 +10,7 @@ class Observers extends ProviderObserver {
     Object? newValue,
     ProviderContainer container,
   ) {
-    print('''
+    log('''
 {
   "provider": "${provider.name ?? provider.runtimeType}",
   "newValue": "$newValue"
@@ -17,7 +19,7 @@ class Observers extends ProviderObserver {
 
   @override
   void didDisposeProvider(ProviderBase provider, ProviderContainer containers) {
-    print('''
+    log('''
 {
   "provider": "${provider.name ?? provider.runtimeType}",
   "newValue": "disposed"

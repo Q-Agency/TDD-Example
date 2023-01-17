@@ -2,9 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_tdd_q/common/data/repositories/recipe_repository.dart';
 import 'package:flutter_tdd_q/common/domain/models/failure.dart';
-
 import 'package:flutter_tdd_q/common/domain/models/recipe.dart';
-
 import 'package:flutter_tdd_q/common/network/api_client.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -38,13 +36,13 @@ void main() {
         readyInMinutes: 5),
   ]);
 
-  void _setupSuccess() {
+  void setupSuccess() {
     when(apiClient.getRandomRecipes()).thenAnswer((_) async => recipes);
     when(apiClient.getRandomRecipes(tags: tags))
         .thenAnswer((_) async => recipes);
   }
 
-  void _setupError() {
+  void setupError() {
     when(apiClient.getRandomRecipes())
         .thenThrow(DioError(requestOptions: RequestOptions(path: '')));
   }
@@ -55,7 +53,7 @@ void main() {
       'should call _apiClient.getRandomRecipes',
       () async {
         // Arrange
-        _setupSuccess();
+        setupSuccess();
         // Act
         await repository.getRecipes();
         // Assert
@@ -65,7 +63,7 @@ void main() {
     test(
       'should call _apiClient.getRandomRecipes with tag vegan',
       () async {
-        _setupSuccess();
+        setupSuccess();
 
         await repository.getRecipes(tags: tags);
         verify(apiClient.getRandomRecipes(tags: tags));
@@ -74,7 +72,7 @@ void main() {
     test(
       'should return list of recipes when api client successfully retrieves data',
       () async {
-        _setupSuccess();
+        setupSuccess();
         final result = await repository.getRecipes();
         final expected = right(recipes);
         expect(result, expected);
@@ -85,7 +83,7 @@ void main() {
   test(
     'should return failure when api client unsuccessfully retrieves data',
     () async {
-      _setupError();
+      setupError();
       final result = await repository.getRecipes();
       final expected = left(const Failure.offline());
 
