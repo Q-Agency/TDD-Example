@@ -109,6 +109,8 @@ void main() {
       'authRepository.signIn should return AuthenticationLocalDataSourceFailure when failed to store user credentials',
       () async {
         when(mockAuthRemoteDataSource.googleSignIn())
+            .thenAnswer((_) async => userCredentials);
+        when(mockAuthLocalDataSource.storeUserCredentials(userCredentials))
             .thenAnswer((_) async => throw AuthLocalDataSourceException());
         final result = await authRepository.signIn();
         expect(result, const Left(authenticationLocalDataSourceFailure));
