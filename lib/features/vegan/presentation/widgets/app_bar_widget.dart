@@ -43,8 +43,8 @@ class _RecipesAppBar extends StatelessWidget {
           leadingWidth: 50,
           centerTitle: false,
           primary: false,
-          title: Row(
-            children: const [
+          title: const Row(
+            children: [
               Text('Q Recipes'),
             ],
           ),
@@ -57,14 +57,14 @@ class _RecipesAppBar extends StatelessWidget {
 class ClosePageButton extends StatelessWidget {
   final Color color;
   final bool useCrossIcon;
-  final Function? onTap;
+  final Function()? onTap;
 
   const ClosePageButton({
-    Key? key,
+    super.key,
     required this.color,
     this.useCrossIcon = false,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

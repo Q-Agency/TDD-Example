@@ -10,8 +10,7 @@ class RecipesListWidget extends StatelessWidget {
   final List<Recipe> recipes;
   final bool disableScroll;
   const RecipesListWidget(
-      {Key? key, required this.recipes, this.disableScroll = false})
-      : super(key: key);
+      {super.key, required this.recipes, this.disableScroll = false});
 
   @override
   Widget build(BuildContext context) {

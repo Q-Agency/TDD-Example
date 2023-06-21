@@ -25,7 +25,7 @@ class _RecipeNumberDetails extends StatelessWidget {
                         Icon(Icons.restaurant, color: Colors.orange, size: 15)),
                 TextSpan(
                     text: "${recipe.servings}",
-                    style: textTheme.bodyText2!.apply(fontWeightDelta: 4))
+                    style: textTheme.bodyMedium!.apply(fontWeightDelta: 4))
               ])),
           RichText(
               overflow: TextOverflow.ellipsis,
@@ -36,7 +36,7 @@ class _RecipeNumberDetails extends StatelessWidget {
                 ),
                 TextSpan(
                     text: "${recipe.readyInMinutes} min",
-                    style: textTheme.bodyText2!.apply(fontWeightDelta: 4))
+                    style: textTheme.bodyMedium!.apply(fontWeightDelta: 4))
               ])),
           RichText(
               overflow: TextOverflow.ellipsis,
@@ -45,7 +45,7 @@ class _RecipeNumberDetails extends StatelessWidget {
                     child: Icon(Icons.star, color: Colors.green, size: 15)),
                 TextSpan(
                   text: "${recipe.aggregateLikes}",
-                  style: textTheme.bodyText2!.apply(fontWeightDelta: 4),
+                  style: textTheme.bodyMedium!.apply(fontWeightDelta: 4),
                 ),
               ])),
         ],
@@ -73,13 +73,13 @@ class _RecipeInstructions extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Text(
             "Recipe",
-            style: textTheme.headline6,
+            style: textTheme.titleLarge,
           ),
         ),
         const SizedBox(height: 10),
         Html(
           data: "${recipe.summary}",
-          onLinkTap: (url, context, _, __) => _launchURL(url),
+          onLinkTap: (url, _, __) => _launchURL(url),
         ),
         const SizedBox(height: 10),
       ],
@@ -106,7 +106,7 @@ class _RecipeTitle extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.65,
           child: Text(
             "${recipe.title}",
-            style: textTheme.headline5,
+            style: textTheme.headlineSmall,
             overflow: TextOverflow.ellipsis,
             maxLines: 4,
           ),

@@ -7,8 +7,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'auth/presentation/state/providers.dart';
 
+@RoutePage()
 class MainPage extends ConsumerWidget {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

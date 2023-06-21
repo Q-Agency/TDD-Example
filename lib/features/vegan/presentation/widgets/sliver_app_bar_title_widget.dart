@@ -4,9 +4,9 @@ class SliverAppbarTitle extends StatefulWidget {
   final Widget child;
 
   const SliverAppbarTitle({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   _SliverAppbarTitleState createState() {
@@ -26,7 +26,7 @@ class _SliverAppbarTitleState extends State<SliverAppbarTitle> {
   }
 
   void _addListener() {
-    _position = Scrollable.of(context)?.position;
+    _position = Scrollable.of(context).position;
     _position?.addListener(_positionListener);
     _positionListener();
   }

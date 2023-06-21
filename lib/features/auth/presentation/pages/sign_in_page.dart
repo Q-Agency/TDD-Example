@@ -1,10 +1,12 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tdd_q/features/auth/presentation/state/providers.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+@RoutePage()
 class SignInPage extends ConsumerWidget {
-  const SignInPage({Key? key}) : super(key: key);
+  const SignInPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,7 +29,7 @@ class SignInPage extends ConsumerWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 32.0),
                 child: Text(
                   'Welcome to Q recipes',
-                  style: Theme.of(context).textTheme.headline3,
+                  style: Theme.of(context).textTheme.displaySmall,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -38,9 +40,9 @@ class SignInPage extends ConsumerWidget {
                 onPressed: () =>
                     ref.read(authNotifierProvider.notifier).signIn(),
                 style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.green,
+                    backgroundColor: Colors.white,
                     elevation: 2,
-                    primary: Colors.white,
-                    onPrimary: Colors.green,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16.0, vertical: 8.0)),
                 label: const Text(

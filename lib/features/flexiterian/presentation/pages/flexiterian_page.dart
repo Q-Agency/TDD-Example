@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tdd_q/common/providers/providers.dart';
 import 'package:flutter_tdd_q/common/ui/colors.dart';
@@ -7,8 +8,9 @@ import 'package:flutter_tdd_q/features/vegan/presentation/widgets/circular_loade
 import 'package:flutter_tdd_q/features/vegan/presentation/widgets/recipes_list_widget.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+@RoutePage()
 class FlexiterianPage extends StatelessWidget {
-  const FlexiterianPage({Key? key}) : super(key: key);
+  const FlexiterianPage({super.key});
 
   @override
   Widget build(BuildContext context) {
