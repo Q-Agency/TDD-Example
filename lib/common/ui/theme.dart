@@ -2,18 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 TextTheme defaultText = TextTheme(
-    headline1: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 96),
-    headline2: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 60),
-    headline3: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 48),
-    headline4: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 34),
-    headline5: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 24),
-    headline6: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 20),
-    bodyText1: GoogleFonts.nunito(fontSize: 16, fontWeight: FontWeight.normal),
-    bodyText2: GoogleFonts.nunito(
+    displayLarge: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 96),
+    displayMedium:
+        GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 60),
+    displaySmall: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 48),
+    headlineMedium:
+        GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 34),
+    headlineSmall:
+        GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 24),
+    titleLarge: GoogleFonts.nunito(fontWeight: FontWeight.bold, fontSize: 20),
+    bodyLarge: GoogleFonts.nunito(fontSize: 16, fontWeight: FontWeight.normal),
+    bodyMedium: GoogleFonts.nunito(
       fontSize: 14,
       fontWeight: FontWeight.normal,
     ),
-    subtitle1: GoogleFonts.nunito(fontSize: 16, fontWeight: FontWeight.normal),
-    subtitle2: GoogleFonts.nunito(fontSize: 14, fontWeight: FontWeight.w400),
-    button: GoogleFonts.nunito(fontSize: 14, fontWeight: FontWeight.w400),
-    caption: GoogleFonts.nunito(fontSize: 12, fontWeight: FontWeight.normal));
+    titleMedium:
+        GoogleFonts.nunito(fontSize: 16, fontWeight: FontWeight.normal),
+    titleSmall: GoogleFonts.nunito(fontSize: 14, fontWeight: FontWeight.w400),
+    labelLarge: GoogleFonts.nunito(fontSize: 14, fontWeight: FontWeight.w400),
+    bodySmall: GoogleFonts.nunito(fontSize: 12, fontWeight: FontWeight.normal));

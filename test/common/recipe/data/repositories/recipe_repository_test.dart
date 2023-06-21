@@ -44,7 +44,7 @@ void main() {
 
   void setupError() {
     when(apiClient.getRandomRecipes())
-        .thenThrow(DioError(requestOptions: RequestOptions(path: '')));
+        .thenThrow(DioException(requestOptions: RequestOptions()));
   }
 
   // Group tests by methods from RecipeRepository

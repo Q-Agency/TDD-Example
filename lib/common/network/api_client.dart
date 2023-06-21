@@ -19,11 +19,11 @@ abstract class ApiClient {
   });
 }
 
-extension NetworkHandler on DioError {
+extension NetworkHandler on DioException {
   Failure handleFailure() {
     if (error is SocketException ||
-        type == DioErrorType.connectTimeout ||
-        type == DioErrorType.other) {
+        type == DioExceptionType.connectionTimeout ||
+        type == DioExceptionType.unknown) {
       return const Failure.offline();
     }
 

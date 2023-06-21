@@ -8,11 +8,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/circle_icon_button_widget.dart';
 import '../widgets/sliver_app_bar_title_widget.dart';
+
 part '../widgets/recipe_details_widgets.dart';
 
+@RoutePage()
 class RecipeDetailsPage extends StatelessWidget {
   final Recipe recipe;
-  const RecipeDetailsPage({Key? key, required this.recipe}) : super(key: key);
+  const RecipeDetailsPage({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +95,7 @@ class _RecipeInformationListWidget extends StatelessWidget {
   }
 }
 
-Future<void> _launchURL(url) async {
-  if (!await launch(url)) throw 'Could not launch $url';
+Future<void> _launchURL(String? url) async {
+  final uri = Uri.tryParse(url ?? '');
+  if (uri == null || !await launchUrl(uri)) throw 'Could not launch $url';
 }

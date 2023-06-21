@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_tdd_q/common/domain/models/failure.dart';
 import 'package:flutter_tdd_q/common/domain/models/recipe.dart';
-
 import 'package:flutter_tdd_q/common/network/api_client.dart';
 
 abstract class IRecipeRepository {
@@ -23,7 +22,7 @@ class RecipeRepository implements IRecipeRepository {
     try {
       final response = await _api.getRandomRecipes(tags: tags);
       return right(response);
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       return left(e.handleFailure());
     }
   }

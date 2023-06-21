@@ -7,9 +7,9 @@ import '../../../../common/ui/colors.dart';
 
 class HeartWidget extends ConsumerWidget {
   const HeartWidget({
-    Key? key,
+    super.key,
     required this.recipe,
-  }) : super(key: key);
+  });
 
   final Recipe recipe;
 

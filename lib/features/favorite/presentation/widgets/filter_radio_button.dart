@@ -6,7 +6,7 @@ import 'package:flutter_tdd_q/features/favorite/presentation/state/favorite_list
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class FilterRadioButton extends ConsumerWidget {
-  const FilterRadioButton({Key? key}) : super(key: key);
+  const FilterRadioButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -14,7 +14,6 @@ class FilterRadioButton extends ConsumerWidget {
         padding: 6,
         enableShape: true,
         width: 150,
-        absoluteZeroSpacing: false,
         buttonValues: getListOfFilters(),
         buttonLables: getListOfFilters(),
         defaultSelected: getListOfFilters()[0],
@@ -24,10 +23,8 @@ class FilterRadioButton extends ConsumerWidget {
           else
             ref.read(filterProvider.notifier).state = FilterFavorites.vegan;
         },
-        enableButtonWrap: false,
         selectedBorderColor: Colors.transparent,
         unSelectedBorderColor: Colors.transparent,
-        horizontal: false,
         selectedColor: AppColors.middleGreen,
         unSelectedColor: AppColors.lighterGreen);
   }

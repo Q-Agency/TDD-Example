@@ -4,8 +4,8 @@ import '../../../../common/ui/colors.dart';
 
 class CircularLoader extends StatelessWidget {
   const CircularLoader({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
